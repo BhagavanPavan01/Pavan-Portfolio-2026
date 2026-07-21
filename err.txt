@@ -1,0 +1,54 @@
+✗ Build failed in 819ms
+error during build:
+Build failed with 6 errors:
+
+[MISSING_EXPORT] "Github" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   ╭─[ src/components/Hero.jsx:3:10 ]
+   │
+ 3 │ import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
+   │          ───┬──  
+   │             ╰──── Missing export
+───╯
+
+[MISSING_EXPORT] "Linkedin" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   ╭─[ src/components/Hero.jsx:3:18 ]
+   │
+ 3 │ import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
+   │                  ────┬───  
+   │                      ╰───── Missing export
+───╯
+
+[MISSING_EXPORT] "Twitter" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   ╭─[ src/components/Hero.jsx:3:34 ]
+   │
+ 3 │ import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
+   │                                  ───┬───  
+   │                                     ╰───── Missing export
+───╯
+
+[MISSING_EXPORT] "Github" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   ╭─[ src/components/Footer.jsx:3:17 ]
+   │
+ 3 │ import { Code2, Github, Linkedin, Twitter } from "lucide-react";
+   │                 ───┬──  
+   │                    ╰──── Missing export
+───╯
+
+[MISSING_EXPORT] "Linkedin" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   ╭─[ src/components/Footer.jsx:3:25 ]
+   │
+ 3 │ import { Code2, Github, Linkedin, Twitter } from "lucide-react";
+   │                         ────┬───  
+   │                             ╰───── Missing export
+───╯
+
+...
+    at aggregateBindingErrorsIntoJsError (file:///E:/codings/React%20main%20Portfolio/node_modules/rolldown/dist/shared/error-BHRSI0R7.mjs:48:18)
+    at unwrapBindingResult (file:///E:/codings/React%20main%20Portfolio/node_modules/rolldown/dist/shared/error-BHRSI0R7.mjs:18:128)
+    at #build (file:///E:/codings/React%20main%20Portfolio/node_modules/rolldown/dist/shared/rolldown-build-CtPvmZgJ.mjs:3276:34)
+    at async buildEnvironment (file:///E:/codings/React%20main%20Portfolio/node_modules/vite/dist/node/chunks/node.js:33061:66)
+    at async Object.build (file:///E:/codings/React%20main%20Portfolio/node_modules/vite/dist/node/chunks/node.js:33483:19)
+    at async Object.buildApp (file:///E:/codings/React%20main%20Portfolio/node_modules/vite/dist/node/chunks/node.js:33480:153)
+    at async CAC.<anonymous> (file:///E:/codings/React%20main%20Portfolio/node_modules/vite/dist/node/cli.js:776:3) {
+  errors: [Getter/Setter]
+}

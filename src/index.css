@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+body {
+  background-color: #111827;
+  /* bg-gray-900 */
+  color: #f3f4f6;
+  /* text-gray-100 */
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (pointer: fine) {
+
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: none !important;
+  }
+}
+
+/* Optional styling to make the scrollbar look elegant in dark mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
