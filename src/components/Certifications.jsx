@@ -13,7 +13,7 @@ const certs = [
 
 const Certifications = () => {
     return (
-        <section id="certifications" className="py-24 bg-gray-950 border-t border-gray-900">
+        <section id="certifications" className="py-24 bg-transparent border-t border-gray-900">
             <div className="container mx-auto px-6 md:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}

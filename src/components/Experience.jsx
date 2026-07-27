@@ -4,7 +4,7 @@ import { Briefcase } from 'lucide-react';
 
 const Experience = () => {
     return (
-        <section id="experience" className="py-24 bg-gray-950">
+        <section id="experience" className="py-24 bg-transparent border-t border-gray-900 border-opacity-50">
             <div className="container mx-auto px-6 md:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}

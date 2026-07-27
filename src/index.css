@@ -10,17 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (pointer: fine) {
-
-  body,
-  a,
-  button,
-  input,
-  textarea,
-  select {
-    cursor: none !important;
-  }
-}
+/* Removed cursor:none override to restore default pointer */
 
 /* Optional styling to make the scrollbar look elegant in dark mode */
 ::-webkit-scrollbar {

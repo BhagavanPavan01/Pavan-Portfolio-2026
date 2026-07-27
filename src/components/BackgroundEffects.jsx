@@ -49,7 +49,7 @@ const BackgroundEffects = () => {
                         default: "out",
                     },
                     random: true,
-                    speed: 0.2, // very slow moving stars
+                    speed: 1.5, // Faster moving stars
                     straight: false,
                 },
                 number: {
@@ -95,27 +95,27 @@ const BackgroundEffects = () => {
 
                 {/* 1. Gas Giant (Saturn-like) */}
                 <motion.div
-                    animate={{ rotate: 360, y: [0, -20, 0] }}
-                    transition={{ rotate: { duration: 200, repeat: Infinity, ease: 'linear' }, y: { duration: 15, repeat: Infinity, ease: 'easeInOut' } }}
-                    className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-20 pointer-events-none"
+                    animate={{ rotate: 360, x: ['0vw', '-40vw', '0vw'], y: ['0vh', '15vh', '0vh'] }}
+                    transition={{ rotate: { duration: 150, repeat: Infinity, ease: 'linear' }, x: { duration: 80, repeat: Infinity, ease: 'easeInOut' }, y: { duration: 60, repeat: Infinity, ease: 'easeInOut' } }}
+                    className="absolute top-10 right-10 w-[400px] h-[400px] opacity-20 pointer-events-none"
                 >
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-purple-800 via-orange-900 to-transparent shadow-[inset_-20px_-20px_50px_rgba(0,0,0,0.8),0_0_80px_rgba(168,85,247,0.3)]"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-gradient-to-tr from-purple-800 via-orange-900 to-transparent shadow-[inset_-10px_-10px_30px_rgba(0,0,0,0.8),0_0_40px_rgba(168,85,247,0.3)]"></div>
                     {/* Ring */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[150px] rounded-[50%] border-t-8 border-b-2 border-orange-500/30 transform rotate-12 shadow-[0_0_30px_rgba(251,146,60,0.2)]"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[80px] rounded-[50%] border-t-[6px] border-b-[2px] border-orange-500/30 transform rotate-12 shadow-[0_0_20px_rgba(251,146,60,0.2)]"></div>
                 </motion.div>
 
                 {/* 2. Ice Moon */}
                 <motion.div
-                    animate={{ y: [0, 30, 0] }}
-                    transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute top-1/3 left-10 w-[150px] h-[150px] rounded-full bg-gradient-to-bl from-cyan-300 via-blue-800 to-gray-900 opacity-40 shadow-[inset_-10px_-10px_30px_rgba(0,0,0,0.9),0_0_40px_rgba(34,211,238,0.2)]"
+                    animate={{ x: ['0vw', '50vw', '0vw'], y: ['0vh', '-30vh', '0vh'] }}
+                    transition={{ duration: 70, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute top-1/3 left-10 w-[60px] h-[60px] rounded-full bg-gradient-to-bl from-cyan-300 via-blue-800 to-gray-900 opacity-40 shadow-[inset_-5px_-5px_15px_rgba(0,0,0,0.9),0_0_20px_rgba(34,211,238,0.2)]"
                 ></motion.div>
 
                 {/* 3. Tiny Red Planet */}
                 <motion.div
-                    animate={{ y: [0, -40, 0], x: [0, 20, 0] }}
-                    transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute bottom-20 right-1/4 w-[80px] h-[80px] rounded-full bg-gradient-to-tr from-red-900 via-rose-700 to-transparent opacity-30 shadow-[inset_-5px_-5px_20px_rgba(0,0,0,0.9)]"
+                    animate={{ x: ['0vw', '-60vw', '0vw'], y: ['0vh', '-40vh', '0vh'] }}
+                    transition={{ duration: 90, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute bottom-1/4 right-1/4 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-red-900 via-rose-700 to-transparent opacity-30 shadow-[inset_-3px_-3px_10px_rgba(0,0,0,0.9)]"
                 ></motion.div>
 
                 {/* ===== SHOOTING STARS ===== */}
@@ -136,6 +136,13 @@ const BackgroundEffects = () => {
                     }}
                     transition={{ duration: 2, repeat: Infinity, delay: 12, ease: "linear" }}
                     className="absolute top-10 right-20 w-[150px] h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent transform -rotate-45 opacity-0"
+                ></motion.div>
+
+                {/* 4. Glowing Sun (Star) */}
+                <motion.div
+                    animate={{ scale: [1, 1.1, 1], rotate: [0, 360], x: ['0vw', '30vw', '0vw'], y: ['0vh', '15vh', '0vh'] }}
+                    transition={{ scale: { duration: 15, repeat: Infinity, ease: 'easeInOut' }, rotate: { duration: 200, repeat: Infinity, ease: 'linear' }, x: { duration: 100, repeat: Infinity, ease: 'easeInOut' }, y: { duration: 120, repeat: Infinity, ease: 'easeInOut' } }}
+                    className="absolute bottom-10 left-10 w-[200px] h-[200px] rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-yellow-300 opacity-70 shadow-[0_0_100px_rgba(251,146,60,0.5),inset_-20px_-20px_40px_rgba(153,27,27,0.8)] pointer-events-none"
                 ></motion.div>
 
 

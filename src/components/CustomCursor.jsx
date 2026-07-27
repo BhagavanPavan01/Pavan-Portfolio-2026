@@ -1,80 +1,86 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 const CustomCursor = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
+    const canvasRef = useRef(null);
 
     useEffect(() => {
-        const updateMousePosition = (e) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-        };
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
 
-        const handleMouseOver = (e) => {
-            if (e.target.tagName.toLowerCase() === 'a' ||
-                e.target.tagName.toLowerCase() === 'button' ||
-                e.target.closest('a') ||
-                e.target.closest('button')) {
-                setIsHovering(true);
-            } else {
-                setIsHovering(false);
+        const setSize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+        setSize();
+        window.addEventListener('resize', setSize);
+
+        let particlesArray = [];
+        let mouse = { x: null, y: null };
+
+        const handleMouseMove = (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+            // Generate fire particles on movement
+            for (let i = 0; i < 4; i++) {
+                particlesArray.push(new Particle(mouse.x, mouse.y));
             }
         };
 
-        window.addEventListener('mousemove', updateMousePosition);
-        window.addEventListener('mouseover', handleMouseOver);
+        window.addEventListener('mousemove', handleMouseMove);
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                // Fire colors from yellow to deep orange/red
+                const colors = ['#fde047', '#fb923c', '#ea580c', '#dc2626'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.size = Math.random() * 6 + 2;
+                this.speedX = Math.random() * 2 - 1;
+                // Fire goes mostly up
+                this.speedY = Math.random() * -2 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.15;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const animate = () => {
+            // Optional: can use a faint fill for trails, but clearRect is cleaner for fire
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                if (particlesArray[i].size <= 0.3) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        animate();
 
         return () => {
-            window.removeEventListener('mousemove', updateMousePosition);
-            window.removeEventListener('mouseover', handleMouseOver);
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('resize', setSize);
         };
     }, []);
 
-    const variants = {
-        default: {
-            x: mousePosition.x - 16,
-            y: mousePosition.y - 16,
-            scale: 1,
-            backgroundColor: "rgba(168, 85, 247, 0)",
-            border: "2px solid rgba(168, 85, 247, 0.5)",
-        },
-        hover: {
-            x: mousePosition.x - 24,
-            y: mousePosition.y - 24,
-            scale: 1.5,
-            backgroundColor: "rgba(168, 85, 247, 0.2)",
-            border: "2px solid rgba(168, 85, 247, 0.8)",
-        }
-    };
-
     return (
-        <>
-            {/* The small trailing dot */}
-            <motion.div
-                className="fixed top-0 left-0 w-3 h-3 bg-purple-500 rounded-full pointer-events-none z-[100]"
-                animate={{
-                    x: mousePosition.x - 6,
-                    y: mousePosition.y - 6,
-                }}
-                transition={{
-                    type: "tween",
-                    ease: "backOut",
-                    duration: 0.1
-                }}
-            />
-            {/* The outer ring */}
-            <motion.div
-                className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[99]"
-                variants={variants}
-                animate={isHovering ? "hover" : "default"}
-                transition={{
-                    type: "spring",
-                    stiffness: 150,
-                    damping: 15,
-                    mass: 0.5
-                }}
-            />
-        </>
+        <canvas
+            ref={canvasRef}
+            className="fixed top-0 left-0 w-full h-full pointer-events-none z-[9999]"
+        />
     );
 };
 
