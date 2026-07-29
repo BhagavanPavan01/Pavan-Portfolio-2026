@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ArrowRight, Code2, Palette, Camera } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Mail, ArrowRight } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
 
 const Hero = () => {
+    const roles = ["Software Developer", "Full Stack Developer", "Graphic Designer"];
+    const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+    const [currentText, setCurrentText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        let timer;
+        const currentRole = roles[currentRoleIndex];
+
+        if (isDeleting) {
+            timer = setTimeout(() => {
+                setCurrentText(prev => prev.slice(0, -1));
+                if (currentText.length === 0) {
+                    setIsDeleting(false);
+                    setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+                }
+            }, 50); // Deleting speed
+        } else {
+            if (currentText.length === currentRole.length) {
+                timer = setTimeout(() => setIsDeleting(true), 2000); // Pause before deleting
+            } else {
+                timer = setTimeout(() => {
+                    setCurrentText(currentRole.slice(0, currentText.length + 1));
+                }, 100); // Typing speed
+            }
+        }
+
+        return () => clearTimeout(timer);
+    }, [currentText, isDeleting, currentRoleIndex]);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -40,8 +70,8 @@ const Hero = () => {
                             Bhagavan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Pavan</span>
                         </motion.h1>
 
-                        <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-medium text-gray-400 mb-6">
-                            Proficient Software Developer
+                        <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-medium text-gray-400 mb-6 h-10">
+                            Proficient <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span>
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
@@ -49,9 +79,9 @@ const Hero = () => {
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-                            <a href="#projects" className="px-8 py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center gap-2 group">
-                                View My Work
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <a href="https://drive.google.com/file/d/1DhMEhOwYy3LEk6C9jR_niJCpS98mX_ah/view?usp=sharing" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center gap-2 group">
+                                Download CV
+                                <ArrowRight className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
                             </a>
                             <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white font-medium hover:bg-purple-500/10 transition-colors">
                                 Hire Me
@@ -95,61 +125,64 @@ const Hero = () => {
 
                         <div className="relative w-72 h-72 md:w-[350px] md:h-[350px] z-10 flex items-center justify-center">
 
-                            {/* Space Theme Animation: Swirling Energy / Portal Rings */}
+                            {/* Space Theme Animation: Core Energy Rings for Developer Theme */}
                             <motion.div
                                 animate={{ rotate: 360, scale: [1, 1.05, 1] }}
-                                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                                className="absolute inset-[-10px] rounded-full border-t-[4px] border-purple-500 border-r-[4px] border-transparent shadow-[0_0_40px_rgba(168,85,247,0.6)] mix-blend-screen"
+                                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-[-15px] rounded-full border-t-[4px] border-blue-500 border-r-[4px] border-transparent shadow-[0_0_40px_rgba(59,130,246,0.6)] mix-blend-screen"
                             />
                             <motion.div
                                 animate={{ rotate: -360, scale: [1, 1.1, 1] }}
-                                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                                className="absolute inset-[-25px] rounded-full border-b-[4px] border-cyan-400 border-l-[4px] border-transparent shadow-[0_0_30px_rgba(34,211,238,0.4)] mix-blend-screen"
+                                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-[-30px] rounded-full border-b-[4px] border-purple-500 border-l-[4px] border-transparent shadow-[0_0_30px_rgba(168,85,247,0.4)] mix-blend-screen"
+                            />
+                            <motion.div
+                                animate={{ rotate: 360, scale: [1, 1.02, 1] }}
+                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-[-45px] rounded-full border-[1px] border-cyan-400/30 border-dashed"
                             />
 
-                            {/* The Photo Container specifically set up for your image URL */}
-                            <div className="w-full h-full rounded-full bg-gray-900 border-4 border-indigo-900 overflow-hidden relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8),0_0_30px_rgba(79,70,229,0.5)]">
-
-                                {/* 👇 PASTE YOUR PHOTO URL IN THE src BELOW 👇 */}
+                            {/* Center Avatar with Tech Glow */}
+                            <div className="w-full h-full rounded-full bg-gray-900 border-4 border-blue-900/50 overflow-hidden relative shadow-[inset_0_0_30px_rgba(0,0,0,0.8),0_0_40px_rgba(59,130,246,0.4)] z-10 group">
                                 <img
-                                    src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                    alt="Bhagavan Pavan"
-                                    className="w-full h-full object-cover relative z-10"
+                                    src="https://res.cloudinary.com/qxw39tud/image/upload/v1785342244/1767115738588png_qasauv.png"
+                                    alt="Bhagavan Pavan Animation and Design"
+                                    className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110"
                                 />
-
-                                {/* Instructions showing if the image link is broken or empty */}
-                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-800 text-gray-400 text-sm text-center p-4">
-                                    <span>Paste your URL</span>
-                                    <span>in Hero.jsx</span>
-                                </div>
+                                <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-20"></div>
                             </div>
 
-                            {/* Animated Role Badges */}
+                            {/* Floating Tech Stack Icons tailored for Software Developer */}
                             <motion.div
-                                animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 5, -5, 0] }}
-                                transition={{ duration: 6, repeat: Infinity, delay: 0, ease: "easeInOut" }}
-                                className="absolute -top-8 -right-8 p-3 md:p-4 bg-gray-900/90 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(59,130,246,0.3)] border border-blue-500/50 flex items-center gap-3 z-20"
+                                animate={{ y: [0, -15, 0], x: [0, -10, 0], rotate: [0, 10, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute -top-6 -right-6 p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(97,218,251,0.4)] border border-cyan-500/30 z-30 flex items-center justify-center"
                             >
-                                <Code2 className="text-blue-400 w-5 h-5" />
-                                <span className="text-blue-200 font-bold text-sm tracking-wide">Developer</span>
+                                <FaReact className="text-[#61DAFB] w-7 h-7" />
                             </motion.div>
 
                             <motion.div
-                                animate={{ y: [0, 25, 0], x: [0, -15, 0], rotate: [0, -5, 5, 0] }}
-                                transition={{ duration: 7, repeat: Infinity, delay: 1.5, ease: "easeInOut" }}
-                                className="absolute bottom-12 -left-16 p-3 md:p-4 bg-gray-900/90 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(236,72,153,0.3)] border border-pink-500/50 flex items-center gap-3 z-20"
+                                animate={{ y: [0, 20, 0], x: [0, -10, 0], rotate: [0, -10, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, delay: 1, ease: "easeInOut" }}
+                                className="absolute bottom-4 -left-10 p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(104,160,99,0.4)] border border-green-500/30 z-30 flex items-center justify-center"
                             >
-                                <Palette className="text-pink-400 w-5 h-5" />
-                                <span className="text-pink-200 font-bold text-sm tracking-wide">Designer</span>
+                                <FaNodeJs className="text-[#68A063] w-7 h-7" />
                             </motion.div>
 
                             <motion.div
-                                animate={{ y: [0, -15, 0], x: [0, -20, 0], scale: [1, 1.05, 1] }}
-                                transition={{ duration: 5, repeat: Infinity, delay: 2.5, ease: "easeInOut" }}
-                                className="absolute -bottom-10 right-4 p-3 md:p-4 bg-gray-900/90 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(34,197,94,0.3)] border border-green-500/50 flex items-center gap-3 z-20"
+                                animate={{ y: [0, -10, 0], x: [0, 15, 0], scale: [1, 1.1, 1] }}
+                                transition={{ duration: 4.5, repeat: Infinity, delay: 2, ease: "easeInOut" }}
+                                className="absolute -bottom-8 right-8 p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(247,223,30,0.4)] border border-yellow-500/30 z-30 flex items-center justify-center"
                             >
-                                <Camera className="text-green-400 w-5 h-5" />
-                                <span className="text-green-200 font-bold text-sm tracking-wide">Photographer</span>
+                                <FaPython className="text-[#3776AB] w-7 h-7" />
+                            </motion.div>
+
+                            <motion.div
+                                animate={{ y: [0, 15, 0], x: [0, 15, 0], rotate: [0, 180, 360] }}
+                                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                className="absolute top-10 -left-8 p-3 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_15px_rgba(227,79,38,0.4)] border border-orange-500/30 z-30 flex items-center justify-center"
+                            >
+                                <FaGitAlt className="text-[#F05032] w-6 h-6" />
                             </motion.div>
                         </div>
                     </motion.div>

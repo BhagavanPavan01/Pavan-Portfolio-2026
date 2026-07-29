@@ -142,7 +142,7 @@ const BackgroundEffects = () => {
                 <motion.div
                     animate={{ scale: [1, 1.1, 1], rotate: [0, 360], x: ['0vw', '30vw', '0vw'], y: ['0vh', '15vh', '0vh'] }}
                     transition={{ scale: { duration: 15, repeat: Infinity, ease: 'easeInOut' }, rotate: { duration: 200, repeat: Infinity, ease: 'linear' }, x: { duration: 100, repeat: Infinity, ease: 'easeInOut' }, y: { duration: 120, repeat: Infinity, ease: 'easeInOut' } }}
-                    className="absolute bottom-10 left-10 w-[200px] h-[200px] rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-yellow-300 opacity-70 shadow-[0_0_100px_rgba(251,146,60,0.5),inset_-20px_-20px_40px_rgba(153,27,27,0.8)] pointer-events-none"
+                    className="absolute bottom-10 left-10 w-[60px] h-[60px] rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-yellow-300 opacity-70 shadow-[0_0_40px_rgba(251,146,60,0.5),inset_-10px_-10px_20px_rgba(153,27,27,0.8)] pointer-events-none"
                 ></motion.div>
 
 

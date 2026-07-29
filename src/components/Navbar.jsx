@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
     { name: 'Home', href: '#home' },
@@ -29,13 +29,17 @@ const Navbar = () => {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900 border-b border-gray-800 shadow-lg ${isScrolled
-                ? 'py-5'
-                : 'py-6'
+                ? 'py-3'
+                : 'py-4'
                 }`}
         >
             <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-                <a href="#home" className="flex items-center gap-2 group">
-                    <Code2 className="w-8 h-8 text-purple-500 group-hover:text-purple-400 transition-colors" />
+                <a href="#home" className="flex items-center gap-3 group">
+                    <img
+                        src="https://res.cloudinary.com/qxw39tud/image/upload/v1785342244/1767115738588png_qasauv.png"
+                        alt="Bhagavan Pavan Logo"
+                        className="w-10 h-10 rounded-full border-2 border-purple-500/50 shadow-[0_0_10px_rgba(168,85,247,0.3)] group-hover:border-purple-400 group-hover:scale-110 transition-all duration-300 object-cover"
+                    />
                     <span className="text-xl font-bold font-sans bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400">
                         Bhagavan Pavan
                     </span>
@@ -52,14 +56,6 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <a
-                        href="https://drive.google.com/file/d/1DhMEhOwYy3LEk6C9jR_niJCpS98mX_ah/view?usp=sharing"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                        Download CV
-                    </a>
                 </nav>
 
                 {/* Mobile Toggle */}
@@ -91,14 +87,6 @@ const Navbar = () => {
                                     {link.name}
                                 </a>
                             ))}
-                            <a
-                                href="https://drive.google.com/file/d/1DhMEhOwYy3LEk6C9jR_niJCpS98mX_ah/view?usp=sharing"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="px-5 py-2.5 mt-2 text-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium"
-                            >
-                                Download CV
-                            </a>
                         </div>
                     </motion.nav>
                 )}
