@@ -48,16 +48,16 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-transparent">
+        <section id="home" className="relative min-h-screen flex items-start md:items-center justify-center pt-36 md:pt-24 pb-16 overflow-hidden bg-transparent">
             {/* Background gradients */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="container mx-auto px-6 md:px-12 z-10">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
 
                     <motion.div
-                        className="flex-1 text-left"
+                        className="flex-1 text-center md:text-left"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -66,29 +66,29 @@ const Hero = () => {
                             👋 Hello, It's Me
                         </motion.div>
 
-                        <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
+                        <motion.h1 variants={itemVariants} className="text-3xl min-[390px]:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 tracking-tight whitespace-nowrap">
                             Bhagavan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Pavan</span>
                         </motion.h1>
 
-                        <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-medium text-gray-400 mb-6 h-10">
+                        <motion.h2 variants={itemVariants} className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-400 mb-6 h-10">
                             Proficient <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span>
                         </motion.h2>
 
-                        <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
+                        <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0">
                             Passionate about crafting interactive and dynamic web experiences. Specializing in full-stack development, bringing creative ideas to life on the internet.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-                            <a href="https://drive.google.com/file/d/1DhMEhOwYy3LEk6C9jR_niJCpS98mX_ah/view?usp=sharing" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center gap-2 group">
+                        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                            <a href="https://drive.google.com/file/d/1DhMEhOwYy3LEk6C9jR_niJCpS98mX_ah/view?usp=sharing" target="_blank" rel="noreferrer" className="px-6 md:px-8 py-3 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center gap-2 group">
                                 Download CV
                                 <ArrowRight className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
                             </a>
-                            <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white font-medium hover:bg-purple-500/10 transition-colors">
+                            <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="px-6 md:px-8 py-3 md:py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white font-medium hover:bg-purple-500/10 transition-colors">
                                 Hire Me
                             </a>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className="flex items-center gap-6 mt-12">
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 mt-12">
                             <span className="text-gray-500 font-medium">Connect:</span>
                             <div className="flex gap-4">
                                 <a href="#" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
@@ -106,40 +106,40 @@ const Hero = () => {
 
                     {/* Upgraded Hero Photo Area */}
                     <motion.div
-                        className="flex-1 w-full flex justify-center relative perspective-1000"
+                        className="flex-1 w-full flex justify-center relative mb-8 md:mb-0 md:mt-0 perspective-1000"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                     >
                         {/* Orbiting rings */}
                         <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                            className="absolute z-0 w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full border border-purple-500/20 border-dashed"
+                            className="absolute z-0 w-64 h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] rounded-full border border-purple-500/20 border-dashed"
                         />
                         <motion.div
                             animate={{ rotate: -360 }}
                             transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-                            className="absolute z-0 w-96 h-96 md:w-[32rem] md:h-[32rem] rounded-full border border-indigo-500/20"
+                            className="absolute z-0 w-72 h-72 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] rounded-full border border-indigo-500/20"
                         />
 
-                        <div className="relative w-72 h-72 md:w-[350px] md:h-[350px] z-10 flex items-center justify-center">
+                        <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-[350px] lg:h-[350px] z-10 flex items-center justify-center">
 
                             {/* Space Theme Animation: Core Energy Rings for Developer Theme */}
                             <motion.div
                                 animate={{ rotate: 360, scale: [1, 1.05, 1] }}
                                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                                className="absolute inset-[-15px] rounded-full border-t-[4px] border-blue-500 border-r-[4px] border-transparent shadow-[0_0_40px_rgba(59,130,246,0.6)] mix-blend-screen"
+                                className="absolute inset-[0px] md:inset-[-15px] rounded-full border-t-[4px] border-blue-500 border-r-[4px] border-transparent shadow-[0_0_40px_rgba(59,130,246,0.6)] mix-blend-screen pointer-events-none"
                             />
                             <motion.div
                                 animate={{ rotate: -360, scale: [1, 1.1, 1] }}
                                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                                className="absolute inset-[-30px] rounded-full border-b-[4px] border-purple-500 border-l-[4px] border-transparent shadow-[0_0_30px_rgba(168,85,247,0.4)] mix-blend-screen"
+                                className="absolute inset-[-10px] md:inset-[-30px] rounded-full border-b-[4px] border-purple-500 border-l-[4px] border-transparent shadow-[0_0_30px_rgba(168,85,247,0.4)] mix-blend-screen pointer-events-none"
                             />
                             <motion.div
                                 animate={{ rotate: 360, scale: [1, 1.02, 1] }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                className="absolute inset-[-45px] rounded-full border-[1px] border-cyan-400/30 border-dashed"
+                                className="absolute inset-[-20px] md:inset-[-45px] rounded-full border-[1px] border-cyan-400/30 border-dashed pointer-events-none"
                             />
 
                             {/* Center Avatar with Tech Glow */}
@@ -149,40 +149,40 @@ const Hero = () => {
                                     alt="Bhagavan Pavan Animation and Design"
                                     className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-20"></div>
+                                <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-20 pointer-events-none"></div>
                             </div>
 
                             {/* Floating Tech Stack Icons tailored for Software Developer */}
                             <motion.div
                                 animate={{ y: [0, -15, 0], x: [0, -10, 0], rotate: [0, 10, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -top-6 -right-6 p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(97,218,251,0.4)] border border-cyan-500/30 z-30 flex items-center justify-center"
+                                className="absolute -top-4 -right-4 md:-top-6 md:-right-6 p-3 md:p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(97,218,251,0.4)] border border-cyan-500/30 z-30 flex items-center justify-center pointer-events-none"
                             >
-                                <FaReact className="text-[#61DAFB] w-7 h-7" />
+                                <FaReact className="text-[#61DAFB] w-5 h-5 md:w-7 md:h-7" />
                             </motion.div>
 
                             <motion.div
                                 animate={{ y: [0, 20, 0], x: [0, -10, 0], rotate: [0, -10, 0] }}
                                 transition={{ duration: 5, repeat: Infinity, delay: 1, ease: "easeInOut" }}
-                                className="absolute bottom-4 -left-10 p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(104,160,99,0.4)] border border-green-500/30 z-30 flex items-center justify-center"
+                                className="absolute bottom-2 -left-6 md:bottom-4 md:-left-10 p-3 md:p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(104,160,99,0.4)] border border-green-500/30 z-30 flex items-center justify-center pointer-events-none"
                             >
-                                <FaNodeJs className="text-[#68A063] w-7 h-7" />
+                                <FaNodeJs className="text-[#68A063] w-5 h-5 md:w-7 md:h-7" />
                             </motion.div>
 
                             <motion.div
                                 animate={{ y: [0, -10, 0], x: [0, 15, 0], scale: [1, 1.1, 1] }}
                                 transition={{ duration: 4.5, repeat: Infinity, delay: 2, ease: "easeInOut" }}
-                                className="absolute -bottom-8 right-8 p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(247,223,30,0.4)] border border-yellow-500/30 z-30 flex items-center justify-center"
+                                className="absolute -bottom-6 right-4 md:-bottom-8 md:right-8 p-3 md:p-4 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(247,223,30,0.4)] border border-yellow-500/30 z-30 flex items-center justify-center pointer-events-none"
                             >
-                                <FaPython className="text-[#3776AB] w-7 h-7" />
+                                <FaPython className="text-[#3776AB] w-5 h-5 md:w-7 md:h-7" />
                             </motion.div>
 
                             <motion.div
                                 animate={{ y: [0, 15, 0], x: [0, 15, 0], rotate: [0, 180, 360] }}
                                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                                className="absolute top-10 -left-8 p-3 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_15px_rgba(227,79,38,0.4)] border border-orange-500/30 z-30 flex items-center justify-center"
+                                className="absolute top-6 -left-4 md:top-10 md:-left-8 p-2 md:p-3 bg-gray-900/90 backdrop-blur-md rounded-full shadow-[0_0_15px_rgba(227,79,38,0.4)] border border-orange-500/30 z-30 flex items-center justify-center pointer-events-none"
                             >
-                                <FaGitAlt className="text-[#F05032] w-6 h-6" />
+                                <FaGitAlt className="text-[#F05032] w-4 h-4 md:w-6 md:h-6" />
                             </motion.div>
                         </div>
                     </motion.div>

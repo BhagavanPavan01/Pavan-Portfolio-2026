@@ -59,12 +59,12 @@ const Projects = () => {
     const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
     return (
-        <section id="projects" className="py-24 bg-transparent border-t border-gray-800">
-            <div className="container mx-auto px-6 md:px-12">
+        <section id="projects" className="py-24 bg-transparent border-t border-gray-900 overflow-hidden relative">
+            <div className="container mx-auto px-6 md:px-12 relative" style={{ zIndex: 10 }}>
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
@@ -75,46 +75,51 @@ const Projects = () => {
                     </p>
                 </motion.div>
 
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Removed motion.div and layout here to explicitly prevent the hanging/freezing cursor */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <AnimatePresence>
-                        {displayedProjects.map((proj, idx) => (
+                        {displayedProjects.map((proj) => (
                             <motion.div
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.4, delay: (idx % 3) * 0.1 }}
+                                whileHover={{ y: -5, scale: 1.015 }}
+                                transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 20 }}
                                 key={proj.title}
                                 onClick={() => window.open(proj.link, '_blank')}
-                                className="cursor-pointer bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 transition-all group flex flex-col h-full"
+                                className="cursor-pointer bg-gray-900/60 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-500/60 shadow-lg hover:shadow-[0_10px_40px_rgba(168,85,247,0.25)] flex flex-col h-full group relative"
                             >
-                                <div className="h-48 bg-gray-900 border-b border-gray-700 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                                    <img
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 20 }}></div>
+
+                                <div className="h-40 relative overflow-hidden bg-gray-950">
+                                    <motion.img
                                         src={proj.image}
                                         alt={proj.title}
-                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ duration: 0.5 }}
+                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent pointer-events-none"></div>
                                 </div>
-                                <div className="p-6 flex flex-col flex-1 relative z-10 bg-gray-800">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{proj.title}</h3>
-                                    <p className="text-gray-400 mb-6 flex-1 line-clamp-3">{proj.desc}</p>
+                                <div className="p-5 flex flex-col flex-1 relative bg-gray-900/80" style={{ zIndex: 10 }}>
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">{proj.title}</h3>
+                                    <p className="text-sm text-gray-400 mb-5 flex-1 line-clamp-3 leading-relaxed">{proj.desc}</p>
 
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {proj.tags.map((tag, tIdx) => (
-                                            <span key={tIdx} className="px-3 py-1 bg-gray-900 rounded-full text-xs font-medium text-gray-300 border border-gray-700">
+                                            <span key={tIdx} className="px-3 py-1 bg-gray-800/80 rounded-full text-xs font-semibold text-purple-300/80 border border-purple-500/20 group-hover:border-purple-500/50 group-hover:text-purple-300 transition-colors duration-300 shadow-[0_0_10px_rgba(168,85,247,0.05)] group-hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
 
-                                    <div className="mt-auto flex items-center gap-3">
+                                    <div className="mt-auto flex items-center gap-3 pt-4 border-t border-gray-800">
                                         <a
                                             href={proj.link}
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-purple-600 transition-colors border border-gray-700 hover:border-purple-500"
+                                            className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gray-800/80 text-gray-200 font-semibold hover:text-white hover:bg-purple-600 transition-colors border border-gray-700 hover:border-purple-500 shadow-sm"
                                         >
                                             <ExternalLink className="w-4 h-4" />
                                             Live Demo
@@ -124,7 +129,7 @@ const Projects = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="inline-flex items-center justify-center p-3 rounded-lg bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-colors border border-gray-700 hover:border-indigo-500"
+                                            className="inline-flex items-center justify-center p-2.5 rounded-lg bg-gray-800/80 text-gray-400 hover:text-white hover:bg-purple-600 transition-colors border border-gray-700 hover:border-purple-500 shadow-sm"
                                             title="View GitHub Repository"
                                         >
                                             <FaGithub className="w-5 h-5" />
@@ -134,17 +139,23 @@ const Projects = () => {
                             </motion.div>
                         ))}
                     </AnimatePresence>
-                </motion.div>
+                </div>
 
                 {projects.length > 3 && (
-                    <div className="text-center mt-12">
-                        <button
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="text-center mt-12 relative" style={{ zIndex: 10 }}
+                    >
+                        <motion.button
                             onClick={() => setShowAll(!showAll)}
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-transparent border-2 border-purple-600 text-purple-400 font-bold hover:bg-purple-600 hover:text-white transition-all cursor-pointer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gray-900/50 backdrop-blur-md border-2 border-purple-500/50 text-purple-300 font-bold hover:bg-purple-600 hover:text-white hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all cursor-pointer"
                         >
                             {showAll ? 'Show Less' : 'View All Projects'}
-                        </button>
-                    </div>
+                        </motion.button>
+                    </motion.div>
                 )}
             </div>
         </section>

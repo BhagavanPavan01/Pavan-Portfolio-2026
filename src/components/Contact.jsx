@@ -1,8 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!formData.name || !formData.email || !formData.message) {
+            alert("Please provide your name, email, and a message.");
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/bhagavanpavan999@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject || 'Portfolio Contact Form Submission',
+                    message: formData.message,
+                    _replyto: formData.email
+                })
+            });
+
+            if (response.ok) {
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                alert("Message sent successfully! Thank you for reaching out.");
+            } else {
+                alert("Oops! Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            alert("Network error. Please check your connection and try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section id="contact" className="py-24 bg-transparent border-t border-gray-800 overflow-hidden relative">
             {/* Background blobs */}
@@ -33,7 +85,7 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex-1 space-y-8"
                     >
-                        <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-colors">
+                        <div className="bg-gray-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-colors">
                             <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
 
                             <div className="space-y-6">
@@ -63,7 +115,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-medium mb-1">Email Address</h4>
-                                        <a href="mailto:bhagavanpavan01@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">bhagavanpavan01@gmail.com</a>
+                                        <a href="mailto:bhagavanpavan999@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">bhagavanpavan999@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -78,31 +130,66 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="flex-[1.5]"
                     >
-                        <form className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 flex flex-col gap-6">
+                        <form onSubmit={handleSubmit} className="bg-gray-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 flex flex-col gap-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="flex flex-col gap-2">
                                     <label htmlFor="name" className="text-sm font-medium text-gray-300">Your Name</label>
-                                    <input type="text" id="name" placeholder="John Doe" className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" />
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        placeholder="John Doe"
+                                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+                                    />
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label htmlFor="email" className="text-sm font-medium text-gray-300">Your Email</label>
-                                    <input type="email" id="email" placeholder="john@example.com" className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" />
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        placeholder="john@example.com"
+                                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+                                    />
                                 </div>
                             </div>
 
                             <div className="flex flex-col gap-2">
                                 <label htmlFor="subject" className="text-sm font-medium text-gray-300">Subject</label>
-                                <input type="text" id="subject" placeholder="Project Inquiry" className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" />
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    placeholder="Project Inquiry"
+                                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+                                />
                             </div>
 
                             <div className="flex flex-col gap-2">
                                 <label htmlFor="message" className="text-sm font-medium text-gray-300">Message</label>
-                                <textarea id="message" rows="5" placeholder="Tell me about your project..." className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"></textarea>
+                                <textarea
+                                    id="message"
+                                    rows="5"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Tell me about your project..."
+                                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"
+                                ></textarea>
                             </div>
 
-                            <button type="submit" onClick={(e) => e.preventDefault()} className="mt-2 w-full py-4 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-purple-500/30 transition-all transform hover:-translate-y-1">
-                                <Send className="w-5 h-5" />
-                                Send Message
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className={`mt-2 w-full py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all transform ${isSubmitting ? 'bg-gray-700 text-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1'}`}
+                            >
+                                <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
                     </motion.div>

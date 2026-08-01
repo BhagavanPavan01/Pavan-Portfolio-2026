@@ -21,7 +21,7 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <div className="flex gap-16">
+                    <div className="flex gap-8 md:gap-16">
                         <div className="flex flex-col gap-3">
                             <h4 className="text-white font-bold mb-2">Quick Links</h4>
                             <a href="#home" className="text-gray-400 text-sm hover:text-purple-400 transition-colors">Home</a>

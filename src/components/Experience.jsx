@@ -30,7 +30,7 @@ const Experience = () => {
                             <Briefcase className="w-3 h-3 text-white absolute" />
                         </div>
 
-                        <div className="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-xl hover:border-indigo-500/50 transition-colors">
+                        <div className="bg-gray-900 p-6 md:p-8 rounded-2xl border border-gray-800 shadow-xl hover:border-indigo-500/50 transition-colors">
                             <span className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-bold mb-4">
                                 Oct 2024 – Nov 2024
                             </span>
