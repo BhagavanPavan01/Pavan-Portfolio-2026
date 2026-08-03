@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon, Terminal } from 'lucide-react';
 
 const navLinks = [
     { name: 'Home', href: '#home' },
@@ -15,6 +15,12 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    // Theme state
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme ? savedTheme === 'dark' : true;
+    });
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -22,6 +28,21 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Theme toggle effect
+    useEffect(() => {
+        if (!isDarkMode) {
+            document.documentElement.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.classList.remove('light-mode');
+            localStorage.setItem('theme', 'dark');
+        }
+    }, [isDarkMode]);
+
+    const toggleTheme = () => {
+        setIsDarkMode(prev => !prev);
+    };
 
     return (
         <motion.header
@@ -34,19 +55,21 @@ const Navbar = () => {
                 }`}
         >
             <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-                <a href="#home" className="flex items-center gap-3 group">
-                    <img
-                        src="https://res.cloudinary.com/qxw39tud/image/upload/v1785342244/1767115738588png_qasauv.png"
-                        alt="Bhagavan Pavan Logo"
-                        className="w-10 h-10 rounded-full border-2 border-purple-500/50 shadow-[0_0_10px_rgba(168,85,247,0.3)] group-hover:border-purple-400 group-hover:scale-110 transition-all duration-300 object-cover"
-                    />
-                    <span className="text-xl font-bold font-sans bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400">
+                <a href="#home" className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] group-hover:border-purple-400 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all duration-300 overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/qxw39tud/image/upload/v1785598604/Gemini_Generated_Image_wcb1alwcb1alwcb1_lff0we.png"
+                            alt="Bhagavan Pavan Logo"
+                            className="w-full h-full object-cover rounded-full group-hover:opacity-90 transition-opacity"
+                        />
+                    </div>
+                    <span className="text-2xl font-black font-sans bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400 tracking-tight">
                         Bhagavan Pavan
                     </span>
                 </a>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-6 lg:gap-8">
                     {navLinks.map((link, idx) => (
                         <a
                             key={idx}
@@ -56,15 +79,25 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
+
+                    {/* Theme Toggle Button (Desktop) */}
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 ml-2 rounded-full bg-gray-800 border border-gray-700 text-gray-300 hover:text-white hover:border-purple-400 transition-all shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                    >
+                        {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
+                    </button>
                 </nav>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden text-gray-300 hover:text-white"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
+                {/* Mobile Menu Toggle */}
+                <div className="md:hidden flex items-center">
+                    <button
+                        className="text-gray-300 hover:text-white p-1"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
+                        {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -82,16 +115,24 @@ const Navbar = () => {
                                     key={idx}
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="text-gray-300 hover:text-purple-400 font-medium transition-colors"
+                                    className="text-gray-300 hover:text-purple-400 font-medium transition-colors border-b border-gray-800 pb-2"
                                 >
                                     {link.name}
                                 </a>
                             ))}
+                            {/* Theme Toggle Button inside Mobile Menu */}
+                            <button
+                                onClick={() => { toggleTheme(); setMobileMenuOpen(false); }}
+                                className="flex items-center justify-between w-full p-3 rounded-xl bg-gray-800 border border-gray-700 text-gray-300 hover:text-white transition-all mt-2"
+                            >
+                                <span className="font-medium">{isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
+                                {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
+                            </button>
                         </div>
                     </motion.nav>
                 )}
             </AnimatePresence>
-        </motion.header>
+        </motion.header >
     );
 };
 

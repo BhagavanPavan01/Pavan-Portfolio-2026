@@ -16,7 +16,7 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         if (!formData.name || !formData.email || !formData.message) {
@@ -26,37 +26,23 @@ const Contact = () => {
 
         setIsSubmitting(true);
 
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/bhagavanpavan999@gmail.com", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: formData.name,
-                    email: formData.email,
-                    subject: formData.subject || 'Portfolio Contact Form Submission',
-                    message: formData.message,
-                    _replyto: formData.email
-                })
-            });
+        // Format the message for WhatsApp URL encoding
+        const phoneNumber = "919542377685";
+        const textMessage = `Hello Bhagavan Pavan! 👋%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Subject:* ${encodeURIComponent(formData.subject || 'Portfolio Inquiry')}%0A*Message:* ${encodeURIComponent(formData.message)}`;
 
-            if (response.ok) {
-                setFormData({ name: '', email: '', subject: '', message: '' });
-                alert("Message sent successfully! Thank you for reaching out.");
-            } else {
-                alert("Oops! Something went wrong. Please try again.");
-            }
-        } catch (error) {
-            alert("Network error. Please check your connection and try again.");
-        } finally {
-            setIsSubmitting(false);
-        }
+        // WhatsApp API URL construction
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, "_blank");
+
+        // Clear the form and reset state
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitting(false);
     };
 
     return (
-        <section id="contact" className="py-24 bg-transparent border-t border-gray-800 overflow-hidden relative">
+        <section id="contact" className="py-16 bg-transparent border-t border-gray-800 overflow-hidden relative">
             {/* Background blobs */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
@@ -115,7 +101,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-medium mb-1">Email Address</h4>
-                                        <a href="mailto:bhagavanpavan999@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">bhagavanpavan999@gmail.com</a>
+                                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">bhagavanpavan999@gmail.com</a>
                                     </div>
                                 </div>
                             </div>

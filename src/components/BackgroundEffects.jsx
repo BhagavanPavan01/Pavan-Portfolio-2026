@@ -89,7 +89,10 @@ const BackgroundEffects = () => {
         <ParticlesProvider init={init}>
             <div className="fixed inset-0 z-[-1] overflow-hidden bg-gray-950 pointer-events-none">
                 {/* Deep space radial gradient for a premium dark space feel */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-950/40 via-[#0a0a1a] to-[#04040a]"></div>
+                <div
+                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-950/40"
+                    style={{ '--tw-gradient-stops': 'var(--tw-gradient-from), var(--space-via), var(--space-to)' }}
+                ></div>
 
                 {/* ===== PLANETS ===== */}
 

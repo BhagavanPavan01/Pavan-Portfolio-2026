@@ -59,7 +59,7 @@ const Projects = () => {
     const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
     return (
-        <section id="projects" className="py-24 bg-transparent border-t border-gray-900 overflow-hidden relative">
+        <section id="projects" className="py-16 bg-transparent border-t border-gray-900 overflow-hidden relative">
             <div className="container mx-auto px-6 md:px-12 relative" style={{ zIndex: 10 }}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -75,8 +75,8 @@ const Projects = () => {
                     </p>
                 </motion.div>
 
-                {/* Removed motion.div and layout here to explicitly prevent the hanging/freezing cursor */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Added max-w-5xl to reduce card widths globally and increased gap to gap-10 */}
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
                     <AnimatePresence>
                         {displayedProjects.map((proj) => (
                             <motion.div
@@ -119,7 +119,7 @@ const Projects = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gray-800/80 text-gray-200 font-semibold hover:text-white hover:bg-purple-600 transition-colors border border-gray-700 hover:border-purple-500 shadow-sm"
+                                            className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all"
                                         >
                                             <ExternalLink className="w-4 h-4" />
                                             Live Demo
@@ -129,7 +129,7 @@ const Projects = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="inline-flex items-center justify-center p-2.5 rounded-lg bg-gray-800/80 text-gray-400 hover:text-white hover:bg-purple-600 transition-colors border border-gray-700 hover:border-purple-500 shadow-sm"
+                                            className="inline-flex items-center justify-center p-2.5 rounded-lg bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors border border-gray-700 hover:border-gray-500"
                                             title="View GitHub Repository"
                                         >
                                             <FaGithub className="w-5 h-5" />

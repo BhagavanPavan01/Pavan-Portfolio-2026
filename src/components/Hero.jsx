@@ -66,7 +66,7 @@ const Hero = () => {
                             👋 Hello, It's Me
                         </motion.div>
 
-                        <motion.h1 variants={itemVariants} className="text-3xl min-[390px]:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 tracking-tight whitespace-nowrap">
+                        <motion.h1 variants={itemVariants} className="hero-name-text text-3xl min-[390px]:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 tracking-tight whitespace-nowrap">
                             Bhagavan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Pavan</span>
                         </motion.h1>
 
@@ -74,7 +74,7 @@ const Hero = () => {
                             Proficient <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span>
                         </motion.h2>
 
-                        <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0">
+                        <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0 text-justify">
                             Passionate about crafting interactive and dynamic web experiences. Specializing in full-stack development, bringing creative ideas to life on the internet.
                         </motion.p>
 
@@ -97,7 +97,7 @@ const Hero = () => {
                                 <a href="#" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-all hover:-translate-y-1">
                                     <FaLinkedin className="w-5 h-5" />
                                 </a>
-                                <a href="mailto:bhagavanpavan01@gmail.com" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
                                     <Mail className="w-5 h-5" />
                                 </a>
                             </div>

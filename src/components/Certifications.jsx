@@ -16,7 +16,7 @@ const Certifications = () => {
     const displayedCerts = showAll ? certs : certs.slice(0, 3);
 
     return (
-        <section id="certifications" className="py-24 bg-transparent border-t border-gray-900 overflow-hidden relative" style={{ zIndex: 10 }}>
+        <section id="certifications" className="py-16 bg-transparent border-t border-gray-900 overflow-hidden relative" style={{ zIndex: 10 }}>
             <div className="container mx-auto px-6 md:px-12 relative" style={{ zIndex: 10 }}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -29,8 +29,8 @@ const Certifications = () => {
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
                 </motion.div>
 
-                {/* Removed motion.div and layout here completely to prevent hanging bugs */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Added max-w-6xl to reduce card widths globally and increased gap to gap-10 md:gap-12 */}
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
                     <AnimatePresence>
                         {displayedCerts.map((cert) => (
                             <motion.div
@@ -72,10 +72,10 @@ const Certifications = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="w-full flex items-center justify-center gap-2 py-2.5 bg-gray-800/80 rounded-lg text-sm font-semibold text-gray-300 hover:text-white hover:bg-indigo-600 transition-colors border border-gray-700 hover:border-indigo-500"
+                                            className="w-full flex items-center justify-center gap-2 py-2.5 bg-indigo-500/10 rounded-lg text-sm font-semibold text-indigo-400 hover:text-white hover:bg-indigo-500 transition-colors border border-indigo-500/30 hover:border-indigo-500"
                                         >
+                                            <Award className="w-4 h-4" />
                                             <span>View Credential</span>
-                                            <ExternalLink className="w-4 h-4" />
                                         </a>
                                     </div>
                                 </div>
