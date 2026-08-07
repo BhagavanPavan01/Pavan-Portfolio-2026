@@ -88,12 +88,12 @@ const Footer = () => {
                                     rel="noreferrer"
                                     className="flex items-center gap-4 bg-gray-950 p-4 rounded-xl border border-gray-800 hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(124,58,237,0.2)] transition-all group/email"
                                 >
-                                    <div className="bg-gray-800 p-2 rounded-lg group-hover/email:bg-purple-900/30 transition-colors">
+                                    <div className="bg-gray-800 p-2 rounded-lg group-hover/email:bg-purple-900/30 transition-colors flex-shrink-0">
                                         <Mail className="w-5 h-5 text-gray-300 group-hover/email:text-purple-400" />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col min-w-0">
                                         <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Drop a message</span>
-                                        <span className="text-sm text-gray-200 font-bold group-hover/email:text-white">bhagavanpavan999@gmail.com</span>
+                                        <span className="text-sm text-gray-200 font-bold group-hover/email:text-white truncate">bhagavanpavan999@gmail.com</span>
                                     </div>
                                 </a>
                                 <div className="flex items-center gap-4 bg-gray-950 p-4 rounded-xl border border-gray-800">
@@ -122,8 +122,8 @@ const Footer = () => {
 
                     <div className="flex items-center gap-3">
                         {[
-                            { icon: FaGithub, href: "#", color: "hover:text-white" },
-                            { icon: FaLinkedin, href: "#", color: "hover:text-blue-400" },
+                            { icon: FaGithub, href: "https://github.com/BhagavanPavan01", color: "hover:text-white" },
+                            { icon: FaLinkedin, href: "https://www.linkedin.com/in/bhagavan-pavan-227857253", color: "hover:text-blue-400" },
                             { icon: FaTwitter, href: "#", color: "hover:text-cyan-400" },
                             { icon: FaInstagram, href: "#", color: "hover:text-pink-400" }
                         ].map((social, id) => {

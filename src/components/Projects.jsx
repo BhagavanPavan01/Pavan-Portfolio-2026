@@ -5,11 +5,19 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
     {
+        title: "DivTinder",
+        desc: "A responsive personal portfolio website showcasing my skills and work.",
+        link: "https://divtinder.netlify.app/",
+        github: "https://github.com/BhagavanPavan01/DivTinder",
+        image: "https://res.cloudinary.com/qxw39tud/image/upload/v1786119365/Screenshot_2026-08-07_214547_esqhvv.png",
+        tags: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"]
+    },
+    {
         title: "Portfolio Website",
         desc: "A responsive personal portfolio website showcasing my skills and work.",
         link: "https://bhagavanpavan-portfolio.netlify.app/",
         github: "https://github.com/BhagavanPavan01",
-        image: "https://images.unsplash.com/photo-1507238692062-5a042e971924?q=80&w=800&auto=format&fit=crop",
+        image: "https://res.cloudinary.com/decaajhdd/image/upload/v1741881701/Screenshot_2025-03-13_212512_xrhhfj.png",
         tags: ["React", "Tailwind CSS", "Framer Motion"]
     },
     {
@@ -52,6 +60,38 @@ const projects = [
         image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop",
         tags: ["React", "JSPDF"]
     },
+    {
+        title: "BP Creatives",
+        desc: "Web design, photography, video editing, and creative design all under one roof at BP Creative Company.",
+        link: "https://bp-creatives.netlify.app/",
+        github: "https://github.com/BhagavanPavan01",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop",
+        tags: ["Design", "Photography", "Video Editing"]
+    },
+    {
+        title: "Hotstar Clone",
+        desc: "A responsive video streaming platform, featuring dynamic content sections inspired by Disney+ Hotstar.",
+        link: "https://bpcreative-hotstar.netlify.app/",
+        github: "https://github.com/BhagavanPavan01",
+        image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=800&auto=format&fit=crop",
+        tags: ["React", "APIs", "Entertainment"]
+    },
+    {
+        title: "Snake Game",
+        desc: "A classic Snake Game featuring smooth controls, collision detection, and score tracking.",
+        link: "https://bpcreative-snakegame.netlify.app/",
+        github: "https://github.com/BhagavanPavan01",
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+        tags: ["JavaScript", "Game Dev", "Canvas"]
+    },
+    {
+        title: "BP Creative Studio",
+        desc: "BP Creative Studio delivers modern web design, photography, and visual content with a creative edge.",
+        link: "https://bpcreativestudio.netlify.app/",
+        github: "https://github.com/BhagavanPavan01",
+        image: "https://images.unsplash.com/photo-1510146755866-9de2afda5a78?q=80&w=800&auto=format&fit=crop",
+        tags: ["Web Design", "Visual Content", "Photography"]
+    }
 ];
 
 const Projects = () => {

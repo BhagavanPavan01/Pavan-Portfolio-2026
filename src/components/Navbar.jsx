@@ -49,21 +49,21 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900 border-b border-gray-800 shadow-lg ${isScrolled
-                ? 'py-3'
-                : 'py-4'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 shadow-lg ${isScrolled
+                ? 'py-2 md:py-3'
+                : 'py-3 md:py-4'
                 }`}
         >
-            <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-                <a href="#home" className="flex items-center gap-4 group">
-                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] group-hover:border-purple-400 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all duration-300 overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
+                <a href="#home" className="flex items-center gap-3 md:gap-4 group">
+                    <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] group-hover:border-purple-400 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all duration-300 overflow-hidden">
                         <img
                             src="https://res.cloudinary.com/qxw39tud/image/upload/v1785598604/Gemini_Generated_Image_wcb1alwcb1alwcb1_lff0we.png"
                             alt="Bhagavan Pavan Logo"
                             className="w-full h-full object-cover rounded-full group-hover:opacity-90 transition-opacity"
                         />
                     </div>
-                    <span className="text-2xl font-black font-sans bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400 tracking-tight">
+                    <span className="text-xl md:text-2xl font-black font-sans bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400 tracking-tight">
                         Bhagavan Pavan
                     </span>
                 </a>
@@ -92,10 +92,10 @@ const Navbar = () => {
                 {/* Mobile Menu Toggle */}
                 <div className="md:hidden flex items-center">
                     <button
-                        className="text-gray-300 hover:text-white p-1"
+                        className="text-gray-300 hover:text-white p-2 bg-gray-800/80 rounded-lg border border-gray-700 active:scale-95 transition-all"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+                        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </div>
             </div>
@@ -104,30 +104,37 @@ const Navbar = () => {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.nav
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-gray-900 border-b border-gray-800"
+                        initial={{ opacity: 0, height: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, height: 'auto', scale: 1 }}
+                        exit={{ opacity: 0, height: 0, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="md:hidden absolute top-full left-0 right-0 bg-gray-900 border-b border-gray-800 shadow-2xl overflow-hidden"
                     >
-                        <div className="flex flex-col px-6 py-4 space-y-4">
+                        <div className="flex flex-col px-6 py-6 space-y-4 max-h-[80vh] overflow-y-auto">
                             {navLinks.map((link, idx) => (
-                                <a
+                                <motion.a
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.05 }}
                                     key={idx}
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="text-gray-300 hover:text-purple-400 font-medium transition-colors border-b border-gray-800 pb-2"
+                                    className="text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 rounded-xl px-4 py-3 font-semibold transition-colors flex items-center gap-3 tracking-wide"
                                 >
                                     {link.name}
-                                </a>
+                                </motion.a>
                             ))}
                             {/* Theme Toggle Button inside Mobile Menu */}
-                            <button
+                            <motion.button
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
                                 onClick={() => { toggleTheme(); setMobileMenuOpen(false); }}
-                                className="flex items-center justify-between w-full p-3 rounded-xl bg-gray-800 border border-gray-700 text-gray-300 hover:text-white transition-all mt-2"
+                                className="flex items-center justify-center gap-3 w-full p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/20 text-gray-300 hover:text-white transition-all mt-4"
                             >
-                                <span className="font-medium">{isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
+                                <span className="font-semibold">{isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
                                 {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
-                            </button>
+                            </motion.button>
                         </div>
                     </motion.nav>
                 )}

@@ -15,7 +15,7 @@
     "@tsparticles/react": "^4.3.2",
     "@tsparticles/slim": "^4.3.2",
     "bootstrap": "^5.3.8",
-    "framer-motion": "^12.42.2",
+    "framer-motion": "^12.43.0",
     "lucide-react": "^1.25.0",
     "react": "^19.2.7",
     "react-bootstrap": "^2.10.10",

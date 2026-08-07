@@ -78,12 +78,12 @@ const Hero = () => {
                             Passionate about crafting interactive and dynamic web experiences. Specializing in full-stack development, bringing creative ideas to life on the internet.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-                            <a href="https://drive.google.com/file/d/1DhMEhOwYy3LEk6C9jR_niJCpS98mX_ah/view?usp=sharing" target="_blank" rel="noreferrer" className="px-6 md:px-8 py-3 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center gap-2 group">
+                        <motion.div variants={itemVariants} className="flex flex-row w-full items-center justify-center md:justify-start gap-3 sm:gap-4 px-2 sm:px-0">
+                            <a href="https://drive.google.com/file/d/1sLY22kDVqN822kT7x2OzMfP3eL22q6vu/view?usp=sharing" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-4 md:px-8 py-2.5 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 text-sm md:text-base font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center justify-center gap-1.5 md:gap-2 group whitespace-nowrap">
                                 Download CV
-                                <ArrowRight className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-1 transition-transform" />
                             </a>
-                            <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="px-6 md:px-8 py-3 md:py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white font-medium hover:bg-purple-500/10 transition-colors">
+                            <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-4 md:px-8 py-2.5 md:py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white text-sm md:text-base font-medium hover:bg-purple-500/10 transition-colors text-center whitespace-nowrap shadow-sm">
                                 Hire Me
                             </a>
                         </motion.div>
@@ -91,10 +91,10 @@ const Hero = () => {
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 mt-12">
                             <span className="text-gray-500 font-medium">Connect:</span>
                             <div className="flex gap-4">
-                                <a href="#" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
+                                <a href="https://github.com/BhagavanPavan01" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
                                     <FaGithub className="w-5 h-5" />
                                 </a>
-                                <a href="#" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-all hover:-translate-y-1">
+                                <a href="https://www.linkedin.com/in/bhagavan-pavan-227857253" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-all hover:-translate-y-1">
                                     <FaLinkedin className="w-5 h-5" />
                                 </a>
                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">

@@ -6,9 +6,19 @@ const certs = [
     { name: "MERN Stack", provider: "Council for Skills and Competencies", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1753977217/BHAGAVAN_PAVAN_laytdz.png" },
     { name: "Python Basics", provider: "Swayam", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742043975/202200000661_swayam_cec22-cs20_pages-to-jpg-0001_vnkjoy.jpg" },
     { name: "AI-ML Virtual Internship", provider: "EduSkills", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742044102/Bhagavan_Pavan_892947_page-0001_ar8inl.jpg" },
-    { name: "Generative AI", provider: "Swayam NPTEL", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1770384247/Programming_with_Generative_AI_1__page-0001_dagwhs.jpg" },
-    { name: "Industry 4.0 and IOT", provider: "Swayam NPTEL", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1770384245/Introduction_To_Industry_4.0_And_Industrial_Internet_Of_Things_page-0001_ypcsmn.jpg" },
+    { name: "Programming with Generative AI", provider: "Swayam NPTEL", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1770384247/Programming_with_Generative_AI_1__page-0001_dagwhs.jpg" },
+    { name: "Introduction to Industry 4.0 and Industrial IOT", provider: "Swayam NPTEL", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1770384245/Introduction_To_Industry_4.0_And_Industrial_Internet_Of_Things_page-0001_ypcsmn.jpg" },
     { name: "AWS Cloud Foundations", provider: "AWS Academy", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742044142/AWS_Academy_Cloud_Foundations_Badge20221027-46-f1o7yf_page-0001_ksbixc.jpg" },
+    { name: "AI With Python Internship", provider: "Languify", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742044184/Bhagavan_Jul_2022_Coincent_participation_25666_page-0001_llpsog.jpg" },
+    { name: "Basics of Python", provider: "Infosys Springboard", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1743087713/Infosys_springboard_python_certificate_page-0001_vsfr5q.jpg" },
+    { name: "HTML - 5", provider: "Infosys Springboard", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1744982107/HTML-5_page-0001_tspjkr.jpg" },
+    { name: "CSS", provider: "Infosys Springboard", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1744982124/CSS_Web_Design_page-0001_etagmy.jpg" },
+    { name: "Bootstrap", provider: "Infosys Springboard", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1744982136/Creating_Responsive_Web_Pages_using_Bootstrap_4_page-0001_xps0um.jpg" },
+    { name: "JavaScript", provider: "Infosys Springboard", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1749744346/JavaScript_page-0001_voyi6e.jpg" },
+    { name: "Java", provider: "Infosys Springboard", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1749744644/Java_page-0001_uyjzoz.jpg" },
+    { name: "Cisco Networking Academy", provider: "Cisco", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742044356/Pavan_Cico_main_certificate_page-0001_dq6c4h.jpg" },
+    { name: "Python Programming", provider: "Pantech e-Learning", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742047113/Pavan_PS-APSSDC-PYMC-962_page-0001_fbx5rx.jpg" },
+    { name: "Web Developer Intern", provider: "SaiKet Systems", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1770384753/Saiket_systems_Internship_certficate_page-0001_kzp4ph.jpg" }
 ];
 
 const Certifications = () => {

@@ -99,9 +99,9 @@ const Contact = () => {
                                     <div className="p-3 bg-purple-500/10 rounded-lg text-purple-400">
                                         <Mail className="w-6 h-6" />
                                     </div>
-                                    <div>
+                                    <div className="w-full">
                                         <h4 className="text-white font-medium mb-1">Email Address</h4>
-                                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">bhagavanpavan999@gmail.com</a>
+                                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors break-all inline-block w-[200px] xs:w-auto">bhagavanpavan999@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
