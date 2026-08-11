@@ -249,3 +249,26 @@ header a.rounded-full:hover {
     transform: translateY(-100%);
   }
 }
+
+@keyframes tongue-flick {
+
+  0%,
+  100% {
+    transform: scaleX(0) translateY(-50%);
+  }
+
+  10%,
+  20% {
+    transform: scaleX(1) translateY(-50%);
+  }
+
+  15% {
+    transform: scaleX(0.8) translateY(-50%);
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

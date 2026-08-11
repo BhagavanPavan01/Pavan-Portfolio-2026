@@ -55,9 +55,9 @@ const Contact = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-extrabold text-white mb-4">Get In <span className="text-purple-400">Touch</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Get In <span className="text-purple-400">Touch</span></h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mb-6"></div>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto px-4">
                         Ready to start your next project? Let's work together to create something amazing.
                     </p>
                 </motion.div>
@@ -72,7 +72,7 @@ const Contact = () => {
                         className="flex-1 space-y-8"
                     >
                         <div className="bg-gray-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-colors">
-                            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Contact Information</h3>
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">

@@ -4,6 +4,8 @@ import { Award, ExternalLink } from 'lucide-react';
 
 const certs = [
     { name: "MERN Stack", provider: "Council for Skills and Competencies", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1753977217/BHAGAVAN_PAVAN_laytdz.png" },
+    { name: "GenAI Hackathon", provider: "JNTU-GV & GenAIversity", link: "https://res.cloudinary.com/qxw39tud/image/upload/v1786376723/Pavan_GenAi_Hackathon_cert_page-0001_xewgyf.jpg" },
+    { name: "OpenAI Codex Hackathon", provider: "OpenAI × NamasteDev", link: "https://res.cloudinary.com/qxw39tud/image/upload/v1786285067/Namaste_Dev_Hackathon_c0smmi.png" },
     { name: "Python Basics", provider: "Swayam", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742043975/202200000661_swayam_cec22-cs20_pages-to-jpg-0001_vnkjoy.jpg" },
     { name: "AI-ML Virtual Internship", provider: "EduSkills", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1742044102/Bhagavan_Pavan_892947_page-0001_ar8inl.jpg" },
     { name: "Programming with Generative AI", provider: "Swayam NPTEL", link: "https://res.cloudinary.com/decaajhdd/image/upload/v1770384247/Programming_with_Generative_AI_1__page-0001_dagwhs.jpg" },
@@ -35,7 +37,7 @@ const Certifications = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-extrabold text-white mb-4">Licenses & <span className="text-indigo-400">Certifications</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Licenses & <span className="text-indigo-400">Certifications</span></h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
                 </motion.div>
 
@@ -55,15 +57,14 @@ const Certifications = () => {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 20 }}></div>
 
-                                <div className="h-40 relative overflow-hidden bg-gray-950">
+                                <div className="h-56 relative overflow-hidden bg-gray-950 border-b border-gray-800/50 p-2">
                                     <motion.img
                                         src={cert.link}
                                         alt={cert.name}
                                         whileHover={{ scale: 1.05 }}
                                         transition={{ duration: 0.5 }}
-                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100"
+                                        className="w-full h-full object-contain"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent pointer-events-none"></div>
                                 </div>
                                 <div className="p-5 relative flex-1 flex flex-col bg-gray-900/80" style={{ zIndex: 10 }}>
                                     <div className="flex items-start gap-4 mb-4">
@@ -71,11 +72,10 @@ const Certifications = () => {
                                             <Award className="w-5 h-5" />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 leading-tight">{cert.name}</h3>
-                                            <p className="text-sm text-gray-400 font-medium mt-1">{cert.provider}</p>
+                                            <h3 className="text-base md:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 leading-tight">{cert.name}</h3>
+                                            <p className="text-xs md:text-sm text-gray-400 font-medium mt-1">{cert.provider}</p>
                                         </div>
                                     </div>
-
                                     <div className="mt-auto pt-4 border-t border-gray-800">
                                         <a
                                             href={cert.link}
@@ -85,7 +85,7 @@ const Certifications = () => {
                                             className="w-full flex items-center justify-center gap-2 py-2.5 bg-indigo-500/10 rounded-lg text-sm font-semibold text-indigo-400 hover:text-white hover:bg-indigo-500 transition-colors border border-indigo-500/30 hover:border-indigo-500"
                                         >
                                             <Award className="w-4 h-4" />
-                                            <span>View Credential</span>
+                                            <span>View Certificate</span>
                                         </a>
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@ const Footer = () => {
                     {/* Column 1: Brand & Logo (Takes exactly 1/5 width on Desktop) */}
                     <div className="md:col-span-1 flex flex-col items-center md:items-start group">
                         {/* Massive Circular Logo */}
-                        <a href="#home" className="relative flex items-center justify-center w-32 h-32 md:w-full md:aspect-square max-w-[160px] rounded-full border border-gray-800 bg-gray-900/50 p-2 shadow-[0_0_30px_rgba(124,58,237,0.1)] hover:shadow-[0_0_50px_rgba(124,58,237,0.3)] transition-all duration-500 mb-6 group/logo">
+                        <a href="/#home" className="relative flex items-center justify-center w-32 h-32 md:w-full md:aspect-square max-w-[160px] rounded-full border border-gray-800 bg-gray-900/50 p-2 shadow-[0_0_30px_rgba(124,58,237,0.1)] hover:shadow-[0_0_50px_rgba(124,58,237,0.3)] transition-all duration-500 mb-6 group/logo">
                             {/* Rotating border effect */}
                             <div className="absolute inset-0 rounded-full border border-purple-500/0 group-hover/logo:border-purple-500/40 group-hover/logo:rotate-[180deg] transition-all duration-700"></div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
                         </h4>
                         <div className="flex flex-col gap-4">
                             {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((link) => (
-                                <a key={link} href={`#${link.toLowerCase()}`} className="text-gray-400 text-sm font-medium hover:text-white hover:translate-x-2 transition-all w-max flex items-center gap-1 group/link">
+                                <a key={link} href={`/#${link.toLowerCase()}`} className="text-gray-400 text-sm font-medium hover:text-white hover:translate-x-2 transition-all w-max flex items-center gap-1 group/link">
                                     <ArrowUpRight className="w-3 h-3 text-transparent group-hover/link:text-purple-400 transition-colors" />
                                     {link}
                                 </a>

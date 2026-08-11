@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon, Terminal } from 'lucide-react';
 
 const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Certifications', href: '#certifications' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Experience', href: '/#experience' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Certifications', href: '/#certifications' },
+    { name: 'Contact', href: '/#contact' },
 ];
 
 const Navbar = () => {
@@ -55,7 +55,7 @@ const Navbar = () => {
                 }`}
         >
             <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
-                <a href="#home" className="flex items-center gap-3 md:gap-4 group">
+                <a href="/#home" className="flex items-center gap-3 md:gap-4 group">
                     <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] group-hover:border-purple-400 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all duration-300 overflow-hidden">
                         <img
                             src="https://res.cloudinary.com/qxw39tud/image/upload/v1785598604/Gemini_Generated_Image_wcb1alwcb1alwcb1_lff0we.png"

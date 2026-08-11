@@ -66,19 +66,19 @@ const Hero = () => {
                             👋 Hello, It's Me
                         </motion.div>
 
-                        <motion.h1 variants={itemVariants} className="hero-name-text text-3xl min-[390px]:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 tracking-tight whitespace-nowrap">
-                            Bhagavan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Pavan</span>
+                        <motion.h1 variants={itemVariants} className="hero-name-text text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 tracking-tight flex flex-wrap justify-center md:justify-start gap-2">
+                            <span>Bhagavan</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Pavan</span>
                         </motion.h1>
 
-                        <motion.h2 variants={itemVariants} className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-400 mb-6 h-10">
+                        <motion.h2 variants={itemVariants} className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-400 mb-6 h-10">
                             Proficient <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span>
                         </motion.h2>
 
-                        <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0 text-justify">
+                        <motion.p variants={itemVariants} className="text-sm md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0 text-center md:text-left">
                             Passionate about crafting interactive and dynamic web experiences. Specializing in full-stack development, bringing creative ideas to life on the internet.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-row w-full items-center justify-center md:justify-start gap-3 sm:gap-4 px-2 sm:px-0">
+                        <motion.div variants={itemVariants} className="flex flex-row flex-wrap w-full items-center justify-center md:justify-start gap-3 sm:gap-4 px-2 sm:px-0">
                             <a href="https://drive.google.com/file/d/1sLY22kDVqN822kT7x2OzMfP3eL22q6vu/view?usp=sharing" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-4 md:px-8 py-2.5 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 text-sm md:text-base font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center justify-center gap-1.5 md:gap-2 group whitespace-nowrap">
                                 Download CV
                                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-1 transition-transform" />

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,24 +10,76 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import BackgroundEffects from './components/BackgroundEffects';
+import ProjectDetails from './components/ProjectDetails';
+import ExperienceDetails from './components/ExperienceDetails';
+
+const Home = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    // Determine if this is the very first time the app is loading (like a page reload)
+    if (window.__isFirstAppLoad) {
+      // Skip manual scrolling on initial reload so the browser can natively restore the user's scroll position!
+      // The flag is disabled shortly after by the App component below.
+      return;
+    }
+
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          // Silently remove the hash from the URL without triggering a React Router re-render.
+          // This ensures that if the user manually reloads the page later, the browser doesn't force a jump back to this old hash.
+          setTimeout(() => {
+            if (window.location.hash === hash) {
+              window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+          }, 1000);
+        }
+      }, 100);
+    } else {
+      // Only force scroll to top if we navigate to Home internally without a hash.
+      window.scrollTo(0, 0);
+    }
+  }, [hash]);
+
+  return (
+    <main>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Certifications />
+      <Contact />
+    </main>
+  );
+};
+
+// Global variable to track fresh page reloads
+window.__isFirstAppLoad = true;
 
 function App() {
+  // Flag clears immediately after the initial app mount
+  useEffect(() => {
+    window.__isFirstAppLoad = false;
+  }, []);
+
   // We only want the custom cursor on devices that support a fine pointer
   const isDesktop = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
 
   return (
-    <div className="bg-transparent min-h-screen text-gray-100 font-sans selection:bg-purple-500/30 relative">
+    <div className="bg-transparent min-h-screen text-gray-100 font-sans selection:bg-purple-500/30 relative flex flex-col">
       <BackgroundEffects />
       {isDesktop && <CustomCursor />}
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Certifications />
-        <Contact />
-      </main>
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/experience/:id" element={<ExperienceDetails />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

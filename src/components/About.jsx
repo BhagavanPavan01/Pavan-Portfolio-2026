@@ -123,7 +123,7 @@ const About = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-extrabold text-white mb-4">About <span className="text-purple-400">Me</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">About <span className="text-purple-400">Me</span></h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
                 </motion.div>
 
@@ -137,13 +137,13 @@ const About = () => {
                         transition={{ duration: 0.6 }}
                         className="space-y-6"
                     >
-                        <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                        <h3 className="text-2xl md:text-4xl font-bold text-white leading-tight">
                             Bridging the gap between <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">engineering</span> and <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">creativity.</span>
                         </h3>
-                        <p className="text-gray-400 text-lg leading-relaxed text-justify">
+                        <p className="text-gray-400 text-base md:text-lg leading-relaxed text-left">
                             Hello! I'm <strong className="text-white">Bhagavan Pavan</strong>, a Full Stack Developer passionate about designing modern, scalable web applications. I specialize in <strong className="text-white text-indigo-300">React, Node.js, Python, and Java</strong> to build robust end-to-end solutions.
                         </p>
-                        <p className="text-gray-400 text-lg leading-relaxed text-justify">
+                        <p className="text-gray-400 text-base md:text-lg leading-relaxed text-left">
                             Constantly exploring <strong className="text-white text-purple-300">AI and Software Engineering</strong>, I prioritize writing clean, efficient code to deliver digital products that balance high performance with exceptional user experiences.
                         </p>
 
@@ -196,7 +196,7 @@ const About = () => {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="max-w-6xl mx-auto"
                 >
-                    <h3 className="text-3xl font-extrabold text-center text-white mb-12">Technical <span className="text-indigo-400">Skills</span></h3>
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-center text-white mb-12">Technical <span className="text-indigo-400">Skills</span></h3>
 
                     <div className="flex flex-col lg:flex-row gap-8 items-start">
                         {/* Tabs Section taking up ≈ 35% */}
