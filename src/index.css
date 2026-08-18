@@ -66,7 +66,8 @@
 }
 
 /* Background overrides */
-:root.light-mode [class*="bg-gray-950"] {
+:root.light-mode [class*="bg-gray-950"],
+:root.light-mode .experience-section {
   background-color: rgba(255, 255, 255, 0.95) !important;
 }
 

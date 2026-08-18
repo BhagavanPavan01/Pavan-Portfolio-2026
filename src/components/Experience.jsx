@@ -111,7 +111,7 @@ const Experience = () => {
     const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
-        <section id="experience" className="py-24 bg-gray-950 relative overflow-hidden" ref={containerRef}>
+        <section id="experience" className="py-24 bg-transparent relative overflow-hidden experience-section" ref={containerRef}>
             {/* Ambient Background Glow for Modern Elegance */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
