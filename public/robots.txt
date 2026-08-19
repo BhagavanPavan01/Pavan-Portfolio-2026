@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhagavanpavan-portfolio.netlify.app/sitemap.xml
+Sitemap: https://bhagavanpavan.netlify.app/sitemap.xml
