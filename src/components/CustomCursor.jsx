@@ -32,8 +32,17 @@ const CustomCursor = () => {
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                // Fire colors from yellow to deep orange/red
-                const colors = ['#fde047', '#fb923c', '#ea580c', '#dc2626'];
+
+                const isLightMode = document.documentElement.classList.contains('light-mode');
+
+                // Default fire colors for dark theme
+                let colors = ['#fde047', '#fb923c', '#ea580c', '#dc2626'];
+
+                if (isLightMode) {
+                    // Blue / Surf like colors for light theme
+                    colors = ['#38bdf8', '#0284c7', '#2563eb', '#0891b2', '#0ea5e9'];
+                }
+
                 this.color = colors[Math.floor(Math.random() * colors.length)];
                 this.size = Math.random() * 6 + 2;
                 this.speedX = Math.random() * 2 - 1;

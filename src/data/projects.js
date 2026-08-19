@@ -58,6 +58,60 @@ export const projectsData = [
         ]
     },
     {
+        "id": "smart-ticketing-system",
+        "title": "Smart Ticketing System",
+        "desc": "A fully responsive QR-based smart ticketing project utilizing modern full stack technologies for seamless verification and access control.",
+        "link": "#",
+        "github": "https://github.com/BhagavanPavan01",
+        "image": "https://res.cloudinary.com/qxw39tud/image/upload/v1785598604/Gemini_Generated_Image_wcb1alwcb1alwcb1_lff0we.png",
+        "tags": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "QR Codes"
+        ],
+        "sections": [
+            {
+                "heading": "Features",
+                "icon": "Zap",
+                "items": [
+                    "Developed a QR-based smart ticketing system for seamless digital access.",
+                    "Implemented secure ticket generation and verification workflows.",
+                    "Designed full stack infrastructure integrating MongoDB and Node.js APIs.",
+                    "Built responsive frontend interfaces for users and event administrators."
+                ]
+            },
+            {
+                "heading": "Feature Implementation",
+                "icon": "Code",
+                "items": [
+                    "Users purchase or request tickets which auto-generate unique cryptographic QR codes.",
+                    "Administrators scan digital tickets triggering backend validation APIs.",
+                    "Real-time database updates prevent duplicate ticket entries or fraud.",
+                    "Metrics and scanned lists populate the event management dashboard natively."
+                ]
+            },
+            {
+                "heading": "Technical Philosophy",
+                "icon": "Briefcase",
+                "items": [
+                    "Engineered specific scalable validation endpoints ensuring instantaneous verification.",
+                    "Secured data payloads preventing malicious ticket cloning effectively.",
+                    "Focused heavily on mobile-first QR rendering ensuring rapid physical camera tracking."
+                ]
+            },
+            {
+                "heading": "User Guide",
+                "icon": "Target",
+                "items": [
+                    "Customers present digital QR interfaces on mobile devices directly at venues.",
+                    "Scanners utilize admin dashboard access to process entry instantaneously.",
+                    "System actively syncs with backend tracking exact capacity and attendance metrics."
+                ]
+            }
+        ]
+    },
+    {
         "id": "portfolio-website",
         "title": "Portfolio Website",
         "desc": "A modern, responsive personal portfolio showcasing my skills, experience, projects, and software development journey.",

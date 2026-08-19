@@ -170,26 +170,7 @@ a.rounded-md,
   will-change: transform, box-shadow;
 }
 
-/* 3D Card Hover - slight tilt */
-div.rounded-2xl:hover,
-div.rounded-3xl:hover {
-  transform: perspective(1200px) translateY(-6px) scale(1.015) rotateX(1.5deg) rotateY(-0.5deg) !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 15px 25px -10px rgba(124, 58, 237, 0.3) !important;
-  z-index: 40;
-}
-
-/* 3D Button/Link Hover - Pop outward */
-button:hover,
-a.rounded-full:hover,
-a.rounded-lg:hover,
-a.rounded-xl:hover,
-a.rounded-md:hover {
-  transform: translateY(-4px) scale(1.05) translateZ(10px) !important;
-  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(124, 58, 237, 0.4) !important;
-  z-index: 40;
-}
-
-/* 3D Button ACTIVE (Click) State */
+/* 3D Button ACTIVE (Click) State - Allowed on mobile as active state */
 button:active,
 a.rounded-full:active,
 a.rounded-lg:active,
@@ -200,20 +181,6 @@ a.rounded-md:active {
   transition: all 0.1s ease !important;
 }
 
-/* Light mode shadow variants for 3D effects */
-:root.light-mode div.rounded-2xl:hover,
-:root.light-mode div.rounded-3xl:hover {
-  box-shadow: 0 25px 40px -10px rgba(99, 102, 241, 0.25), 0 20px 30px -10px rgba(124, 58, 237, 0.15) !important;
-}
-
-:root.light-mode button:hover,
-:root.light-mode a.rounded-full:hover,
-:root.light-mode a.rounded-lg:hover,
-:root.light-mode a.rounded-xl:hover,
-:root.light-mode a.rounded-md:hover {
-  box-shadow: 0 15px 25px -5px rgba(99, 102, 241, 0.3), 0 8px 10px -6px rgba(124, 58, 237, 0.3) !important;
-}
-
 :root.light-mode button:active,
 :root.light-mode a.rounded-full:active,
 :root.light-mode a.rounded-lg:active,
@@ -222,19 +189,55 @@ a.rounded-md:active {
   box-shadow: 0 5px 10px -2px rgba(99, 102, 241, 0.3), 0 4px 6px -2px rgba(124, 58, 237, 0.3) !important;
 }
 
-/* Prevent navbar icons from drastically shifting */
-header button,
-nav button,
-header a.rounded-full {
-  transform: none !important;
-  box-shadow: none !important;
-}
+@media (hover: hover) and (pointer: fine) {
 
-header button:hover,
-nav button:hover,
-header a.rounded-full:hover {
-  transform: scale(1.1) !important;
-  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3) !important;
+  /* 3D Card Hover - slight tilt */
+  div.rounded-2xl:hover,
+  div.rounded-3xl:hover {
+    transform: perspective(1200px) translateY(-6px) scale(1.015) rotateX(1.5deg) rotateY(-0.5deg) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 15px 25px -10px rgba(124, 58, 237, 0.3) !important;
+    z-index: 40;
+  }
+
+  /* 3D Button/Link Hover - Pop outward */
+  button:hover,
+  a.rounded-full:hover,
+  a.rounded-lg:hover,
+  a.rounded-xl:hover,
+  a.rounded-md:hover {
+    transform: translateY(-4px) scale(1.05) translateZ(10px) !important;
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(124, 58, 237, 0.4) !important;
+    z-index: 40;
+  }
+
+  /* Light mode shadow variants for 3D effects */
+  :root.light-mode div.rounded-2xl:hover,
+  :root.light-mode div.rounded-3xl:hover {
+    box-shadow: 0 25px 40px -10px rgba(99, 102, 241, 0.25), 0 20px 30px -10px rgba(124, 58, 237, 0.15) !important;
+  }
+
+  :root.light-mode button:hover,
+  :root.light-mode a.rounded-full:hover,
+  :root.light-mode a.rounded-lg:hover,
+  :root.light-mode a.rounded-xl:hover,
+  :root.light-mode a.rounded-md:hover {
+    box-shadow: 0 15px 25px -5px rgba(99, 102, 241, 0.3), 0 8px 10px -6px rgba(124, 58, 237, 0.3) !important;
+  }
+
+  /* Prevent navbar icons from drastically shifting */
+  header button,
+  nav button,
+  header a.rounded-full {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  header button:hover,
+  nav button:hover,
+  header a.rounded-full:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.3) !important;
+  }
 }
 
 @keyframes scan {

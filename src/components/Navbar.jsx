@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon, Terminal } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const navLinks = [
     { name: 'Home', href: '/#home' },
@@ -74,6 +74,7 @@ const Navbar = () => {
                         <a
                             key={idx}
                             href={link.href}
+                            aria-label={link.name === 'Home' ? 'Bhagavan Pavan Home' : `${link.name} Bhagavan Pavan`}
                             className="text-gray-300 hover:text-white font-medium transition-colors hover:scale-105 transform inline-block"
                         >
                             {link.name}
@@ -118,6 +119,7 @@ const Navbar = () => {
                                     transition={{ delay: idx * 0.05 }}
                                     key={idx}
                                     href={link.href}
+                                    aria-label={link.name === 'Home' ? 'Bhagavan Pavan Home' : `${link.name} Bhagavan Pavan`}
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 rounded-xl px-4 py-3 font-semibold transition-colors flex items-center gap-3 tracking-wide"
                                 >

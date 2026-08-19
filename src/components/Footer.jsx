@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, MapPin, Mail, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Terminal, MapPin, Mail, ArrowUpRight } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
@@ -13,10 +13,10 @@ const Footer = () => {
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
             <div className="container mx-auto px-6 md:px-12 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-8 lg:gap-12 mb-16">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-8 lg:gap-12 mb-12 md:mb-16">
 
                     {/* Column 1: Brand & Logo (Takes exactly 1/5 width on Desktop) */}
-                    <div className="md:col-span-1 flex flex-col items-center md:items-start group">
+                    <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start group">
                         {/* Massive Circular Logo */}
                         <a href="/#home" className="relative flex items-center justify-center w-32 h-32 md:w-full md:aspect-square max-w-[160px] rounded-full border border-gray-800 bg-gray-900/50 p-2 shadow-[0_0_30px_rgba(124,58,237,0.1)] hover:shadow-[0_0_50px_rgba(124,58,237,0.3)] transition-all duration-500 mb-6 group/logo">
                             {/* Rotating border effect */}
@@ -43,12 +43,11 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Column 2: Quick Links */}
-                    <div className="md:col-span-1 flex flex-col justify-start mt-4 md:mt-0">
-                        <h4 className="text-white font-bold mb-6 tracking-wide flex items-center gap-2 uppercase text-sm">
+                    <div className="col-span-1 md:col-span-1 flex flex-col justify-start mt-4 md:mt-0 items-start text-left">
+                        <h4 className="text-white font-bold mb-6 tracking-wide flex items-center justify-start gap-2 uppercase text-sm">
                             <span className="w-2 h-2 bg-purple-500 rounded-full"></span> Sitemap
                         </h4>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 items-start">
                             {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((link) => (
                                 <a key={link} href={`/#${link.toLowerCase()}`} className="text-gray-400 text-sm font-medium hover:text-white hover:translate-x-2 transition-all w-max flex items-center gap-1 group/link">
                                     <ArrowUpRight className="w-3 h-3 text-transparent group-hover/link:text-purple-400 transition-colors" />
@@ -59,11 +58,11 @@ const Footer = () => {
                     </div>
 
                     {/* Column 3: Services / External */}
-                    <div className="md:col-span-1 flex flex-col justify-start mt-4 md:mt-0">
-                        <h4 className="text-white font-bold mb-6 tracking-wide flex items-center gap-2 uppercase text-sm">
+                    <div className="col-span-1 md:col-span-1 flex flex-col justify-start mt-4 md:mt-0 items-start text-left">
+                        <h4 className="text-white font-bold mb-6 tracking-wide flex items-center justify-start gap-2 uppercase text-sm">
                             <span className="w-2 h-2 bg-indigo-500 rounded-full"></span> Platforms
                         </h4>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 items-start">
                             <a href="https://bp-creatives.netlify.app/" target="_blank" rel="noreferrer" className="text-gray-400 text-sm font-medium hover:text-indigo-300 hover:translate-x-2 transition-all w-max">Web Master</a>
                             <a href="https://bp-creatives.netlify.app/" target="_blank" rel="noreferrer" className="text-gray-400 text-sm font-medium hover:text-indigo-300 hover:translate-x-2 transition-all w-max">UI/UX Engine</a>
                             <a href="https://bpcreativestudio.netlify.app/" target="_blank" rel="noreferrer" className="text-gray-400 text-sm font-medium hover:text-indigo-300 hover:translate-x-2 transition-all w-max">Lens & Photo</a>
@@ -72,31 +71,31 @@ const Footer = () => {
                     </div>
 
                     {/* Column 4 & 5: New Interactive Contact CTA */}
-                    <div className="md:col-span-2 flex flex-col justify-start mt-4 md:mt-0">
-                        <h4 className="text-white font-bold mb-6 tracking-wide flex items-center gap-2 uppercase text-sm">
+                    <div className="col-span-2 md:col-span-2 flex flex-col justify-start mt-4 md:mt-0 items-center md:items-start text-center md:text-left w-full">
+                        <h4 className="text-white font-bold mb-6 tracking-wide flex items-center justify-center md:justify-start gap-2 uppercase text-sm">
                             <span className="w-2 h-2 bg-gray-400 rounded-full"></span> Let's Collab
                         </h4>
 
-                        <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-colors">
+                        <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-colors w-full">
                             <p className="text-gray-400 text-sm leading-relaxed mb-6">
                                 Ready to build something extraordinary? I'm currently seeking new opportunities to leverage my full-stack and UI/UX expertise.
                             </p>
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-4 w-full">
                                 <a
                                     href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com&su=Portfolio%20Inquiry%20-%20Let's%20Connect!&body=Hi%20Pavan,%0A%0AI%20was%20looking%20at%20your%20portfolio%20and%20wanted%20to%20get%20in%20touch%20regarding..."
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center gap-4 bg-gray-950 p-4 rounded-xl border border-gray-800 hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(124,58,237,0.2)] transition-all group/email"
+                                    className="flex items-center gap-4 bg-gray-950 p-4 rounded-xl border border-gray-800 hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(124,58,237,0.2)] transition-all group/email w-full text-left"
                                 >
                                     <div className="bg-gray-800 p-2 rounded-lg group-hover/email:bg-purple-900/30 transition-colors flex-shrink-0">
                                         <Mail className="w-5 h-5 text-gray-300 group-hover/email:text-purple-400" />
                                     </div>
-                                    <div className="flex flex-col min-w-0">
-                                        <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Drop a message</span>
-                                        <span className="text-sm text-gray-200 font-bold group-hover/email:text-white truncate">bhagavanpavan999@gmail.com</span>
+                                    <div className="flex flex-col min-w-0 w-full overflow-hidden">
+                                        <span className="text-[11px] sm:text-xs text-gray-500 font-semibold uppercase tracking-wider">Drop a message</span>
+                                        <span className="text-[12px] sm:text-sm text-gray-200 font-bold group-hover/email:text-white break-all whitespace-normal">bhagavanpavan999@gmail.com</span>
                                     </div>
                                 </a>
-                                <div className="flex items-center gap-4 bg-gray-950 p-4 rounded-xl border border-gray-800">
+                                <div className="flex items-center gap-4 bg-gray-950 p-4 rounded-xl border border-gray-800 w-full text-left">
                                     <div className="bg-gray-800 p-2 rounded-lg">
                                         <MapPin className="w-5 h-5 text-gray-300" />
                                     </div>
@@ -122,14 +121,12 @@ const Footer = () => {
 
                     <div className="flex items-center gap-3">
                         {[
-                            { icon: FaGithub, href: "https://github.com/BhagavanPavan01", color: "hover:text-white" },
-                            { icon: FaLinkedin, href: "https://www.linkedin.com/in/bhagavan-pavan-227857253", color: "hover:text-blue-400" },
-                            { icon: FaTwitter, href: "#", color: "hover:text-cyan-400" },
-                            { icon: FaInstagram, href: "#", color: "hover:text-pink-400" }
+                            { name: 'GitHub', icon: FaGithub, href: "https://github.com/BhagavanPavan01", color: "hover:text-white" },
+                            { name: 'LinkedIn', icon: FaLinkedin, href: "https://www.linkedin.com/in/bhagavan-pavan-227857253", color: "hover:text-blue-400" }
                         ].map((social, id) => {
                             const Icon = social.icon;
                             return (
-                                <a key={id} href={social.href} className={`bg-gray-900 border border-gray-800 p-2.5 rounded-full text-gray-400 ${social.color} hover:border-gray-600 hover:scale-110 active:scale-95 transition-all shadow-sm`}>
+                                <a key={id} href={social.href} aria-label={`Bhagavan Pavan on ${social.name}`} target="_blank" rel="noreferrer" className={`bg-gray-900 border border-gray-800 p-2.5 rounded-full text-gray-400 ${social.color} hover:border-gray-600 hover:scale-110 active:scale-95 transition-all shadow-sm`}>
                                     <Icon className="w-4 h-4" />
                                 </a>
                             );

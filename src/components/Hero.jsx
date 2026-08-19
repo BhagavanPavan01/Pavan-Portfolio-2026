@@ -4,7 +4,7 @@ import { Mail, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
 
 const Hero = () => {
-    const roles = ["Software Developer", "Full Stack Developer", "Graphic Designer"];
+    const roles = ["Full Stack Developer", "MERN Stack Developer", "Software Developer"];
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
     const [currentText, setCurrentText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
@@ -71,19 +71,20 @@ const Hero = () => {
                         </motion.h1>
 
                         <motion.h2 variants={itemVariants} className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-400 mb-6 h-10">
-                            Proficient <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span>
+                            <span className="sr-only">Full Stack Developer | MERN Stack Developer | Software Developer</span>
+                            <span aria-hidden="true">I am a <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span></span>
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-sm md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0 text-center md:text-left">
                             Passionate about crafting interactive and dynamic web experiences. Specializing in full-stack development, bringing creative ideas to life on the internet.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-row flex-wrap w-full items-center justify-center md:justify-start gap-3 sm:gap-4 px-2 sm:px-0">
-                            <a href="https://drive.google.com/file/d/1sLY22kDVqN822kT7x2OzMfP3eL22q6vu/view?usp=sharing" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-4 md:px-8 py-2.5 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 text-sm md:text-base font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center justify-center gap-1.5 md:gap-2 group whitespace-nowrap">
+                        <motion.div variants={itemVariants} className="flex flex-row flex-nowrap w-full items-center justify-center md:justify-start gap-2 sm:gap-4 px-1 sm:px-0">
+                            <a href="https://drive.google.com/file/d/1sLY22kDVqN822kT7x2OzMfP3eL22q6vu/view?usp=sharing" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-2 sm:px-4 md:px-8 py-3 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 text-[13px] sm:text-sm md:text-base font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center justify-center gap-1.5 md:gap-2 group whitespace-nowrap overflow-hidden text-ellipsis">
                                 Download CV
-                                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-1 transition-transform" />
+                                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                             </a>
-                            <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-4 md:px-8 py-2.5 md:py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white text-sm md:text-base font-medium hover:bg-purple-500/10 transition-colors text-center whitespace-nowrap shadow-sm">
+                            <a href="https://wa.me/9542377685" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-2 sm:px-4 md:px-8 py-3 md:py-4 rounded-full border border-gray-700 hover:border-purple-500 text-white text-[13px] sm:text-sm md:text-base font-bold hover:bg-purple-500/10 transition-colors text-center flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis shadow-sm">
                                 Hire Me
                             </a>
                         </motion.div>
@@ -91,13 +92,13 @@ const Hero = () => {
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 mt-12">
                             <span className="text-gray-500 font-medium">Connect:</span>
                             <div className="flex gap-4">
-                                <a href="https://github.com/BhagavanPavan01" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
+                                <a href="https://github.com/BhagavanPavan01" aria-label="Bhagavan Pavan on GitHub" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
                                     <FaGithub className="w-5 h-5" />
                                 </a>
-                                <a href="https://www.linkedin.com/in/bhagavan-pavan-227857253" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-all hover:-translate-y-1">
+                                <a href="https://www.linkedin.com/in/bhagavan-pavan-227857253" aria-label="Bhagavan Pavan on LinkedIn" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-all hover:-translate-y-1">
                                     <FaLinkedin className="w-5 h-5" />
                                 </a>
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" aria-label="Email Bhagavan Pavan" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
                                     <Mail className="w-5 h-5" />
                                 </a>
                             </div>
@@ -146,7 +147,7 @@ const Hero = () => {
                             <div className="w-full h-full rounded-full bg-gray-900 border-4 border-blue-900/50 overflow-hidden relative shadow-[inset_0_0_30px_rgba(0,0,0,0.8),0_0_40px_rgba(59,130,246,0.4)] z-10 group">
                                 <img
                                     src="https://res.cloudinary.com/qxw39tud/image/upload/v1785342244/1767115738588png_qasauv.png"
-                                    alt="Bhagavan Pavan Animation and Design"
+                                    alt="Bhagavan Pavan - Full Stack Developer"
                                     className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-20 pointer-events-none"></div>

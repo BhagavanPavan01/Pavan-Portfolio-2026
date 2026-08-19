@@ -31,14 +31,22 @@ const Certifications = () => {
         <section id="certifications" className="py-16 bg-transparent border-t border-gray-900 overflow-hidden relative" style={{ zIndex: 10 }}>
             <div className="container mx-auto px-6 md:px-12 relative" style={{ zIndex: 10 }}>
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16 md:mb-20"
                 >
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Licenses & <span className="text-indigo-400">Certifications</span></h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
+                    <div className="inline-flex items-center justify-center p-3 md:p-4 bg-gray-900 rounded-2xl border border-gray-800 shadow-xl mb-6 group">
+                        <Award className="w-8 h-8 md:w-10 md:h-10 text-purple-400 group-hover:text-indigo-400 transition-colors" />
+                    </div>
+
+                    <h2 className="text-3xl xs:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase leading-tight">
+                        LICENSES & <br className="sm:hidden" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400">CERTIFICATIONS</span>
+                    </h2>
+
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mt-2"></div>
                 </motion.div>
 
                 {/* Added max-w-6xl to reduce card widths globally and increased gap to gap-10 md:gap-12 */}
@@ -57,7 +65,7 @@ const Certifications = () => {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 20 }}></div>
 
-                                <div className="h-56 relative overflow-hidden bg-gray-950 border-b border-gray-800/50 p-2">
+                                <div className="h-44 md:h-56 relative overflow-hidden bg-gray-950 border-b border-gray-800/50 p-2">
                                     <motion.img
                                         src={cert.link}
                                         alt={cert.name}
@@ -82,7 +90,7 @@ const Certifications = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="w-full flex items-center justify-center gap-2 py-2.5 bg-indigo-500/10 rounded-lg text-sm font-semibold text-indigo-400 hover:text-white hover:bg-indigo-500 transition-colors border border-indigo-500/30 hover:border-indigo-500"
+                                            className="w-full flex items-center justify-center gap-2 py-3 bg-indigo-500/10 rounded-xl text-sm font-semibold text-indigo-400 hover:text-white hover:bg-indigo-500 transition-colors border border-indigo-500/30 hover:border-indigo-500 pointer-events-none"
                                         >
                                             <Award className="w-4 h-4" />
                                             <span>View Certificate</span>

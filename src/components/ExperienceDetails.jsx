@@ -72,15 +72,15 @@ const ExperienceDetails = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-col sm:flex-row flex-wrap w-full gap-3 sm:gap-4">
                             {experience.links?.live && experience.links.live !== "#" && !experience.links.live.includes("REPLACE_") && (
                                 <a
                                     href={experience.links.live}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex-1 inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-purple-600 text-white font-bold hover:bg-purple-500 active:bg-purple-700 transition-colors duration-200 min-w-[140px]"
+                                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-purple-600 text-white text-[13px] sm:text-base font-bold hover:bg-purple-500 active:bg-purple-700 transition-colors duration-200 shadow-md"
                                 >
-                                    <ExternalLink className="w-5 h-5" />
+                                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                                     Live Platform
                                 </a>
                             )}
@@ -90,9 +90,9 @@ const ExperienceDetails = () => {
                                     href={experience.links.github}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gray-800 text-white font-bold border border-gray-700 hover:bg-gray-700 active:bg-gray-600 transition-colors duration-200 min-w-[140px]"
+                                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-gray-800 text-white text-[13px] sm:text-base font-bold border border-gray-700 hover:bg-gray-700 active:bg-gray-600 transition-colors duration-200 shadow-sm"
                                 >
-                                    <FaGithub className="w-5 h-5" />
+                                    <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
                                     GitHub
                                 </a>
                             )}
@@ -102,9 +102,9 @@ const ExperienceDetails = () => {
                                     href={experience.links.certificate}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gray-800 text-white font-bold border border-gray-700 hover:bg-gray-700 active:bg-gray-600 transition-colors duration-200 min-w-[140px]"
+                                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-gray-800 text-white text-[13px] sm:text-base font-bold border border-gray-700 hover:bg-gray-700 active:bg-gray-600 transition-colors duration-200 shadow-sm"
                                 >
-                                    <Award className="w-5 h-5" />
+                                    <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                                     Certificate
                                 </a>
                             )}
@@ -124,23 +124,23 @@ const ExperienceDetails = () => {
                                     {experience.duration}
                                 </span>
                             </div>
-                            <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight">{experience.role}</h1>
-                            <h2 className="text-xl md:text-2xl font-semibold text-purple-400 mb-6">{experience.company}</h2>
-                            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight">{experience.role}</h1>
+                            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-purple-400 mb-4 md:mb-6">{experience.company}</h2>
+                            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify md:text-left w-full">
                                 {experience.desc}
                             </p>
                         </div>
 
                         <div className="bg-gray-900/50 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gray-800">
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <Zap className="text-yellow-400 w-6 h-6" />
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center gap-3">
+                                <Zap className="text-yellow-400 w-5 h-5 md:w-6 md:h-6" />
                                 Key Contributions
                             </h3>
-                            <ul className="space-y-4">
+                            <ul className="space-y-3 md:space-y-4">
                                 {experience.descriptionPoints.map((point, index) => (
-                                    <li key={index} className="flex gap-4 items-start">
-                                        <CheckCircle className="w-6 h-6 text-purple-400 shrink-0 mt-0.5" />
-                                        <span className="text-sm md:text-base text-gray-300 leading-relaxed">{point}</span>
+                                    <li key={index} className="flex gap-3 md:gap-4 items-start">
+                                        <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-purple-400 shrink-0 mt-0.5" />
+                                        <span className="text-[13px] sm:text-sm md:text-base text-gray-300 leading-relaxed">{point}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -154,25 +154,25 @@ const ExperienceDetails = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mt-12 lg:mt-16 bg-gray-900/50 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-gray-800 max-w-7xl mx-auto"
+                    className="mt-12 lg:mt-16 bg-gray-900/50 backdrop-blur-md rounded-2xl p-5 md:p-8 lg:p-12 border border-gray-800 max-w-7xl mx-auto"
                 >
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3 justify-center text-center">
-                        <Briefcase className="text-blue-400 w-8 h-8" />
-                        Professional Impact Overview
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3 justify-center text-center px-2">
+                        <Briefcase className="text-blue-400 w-8 h-8 shrink-0" />
+                        <span>Professional Impact Overview</span>
                     </h3>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto">
-                        <div className="bg-gray-900/40 p-6 rounded-xl border border-gray-800">
-                            <h4 className="text-lg md:text-xl font-semibold text-purple-300 mb-4 font-mono flex items-center gap-3">
-                                <Code className="w-5 h-5" /> Operational Workflow
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-7xl mx-auto">
+                        <div className="bg-gray-900/40 p-5 md:p-6 rounded-xl border border-gray-800">
+                            <h4 className="text-base sm:text-lg md:text-xl font-semibold text-purple-300 mb-3 md:mb-4 font-mono flex items-center gap-2 md:gap-3">
+                                <Code className="w-4 h-4 md:w-5 md:h-5" /> Operational Workflow
                             </h4>
-                            <p className="text-gray-300 leading-relaxed text-base md:text-lg border-l-4 border-purple-500/50 pl-5">{experience.workflow}</p>
+                            <p className="text-gray-300 leading-relaxed text-[13px] sm:text-base md:text-lg border-l-4 border-purple-500/50 pl-4 md:pl-5 text-justify md:text-left w-full">{experience.workflow}</p>
                         </div>
-                        <div className="bg-gray-900/40 p-6 rounded-xl border border-gray-800">
-                            <h4 className="text-lg md:text-xl font-semibold text-purple-300 mb-4 font-mono flex items-center gap-3">
-                                <Code className="w-5 h-5" /> Core Philosophy
+                        <div className="bg-gray-900/40 p-5 md:p-6 rounded-xl border border-gray-800">
+                            <h4 className="text-base sm:text-lg md:text-xl font-semibold text-purple-300 mb-3 md:mb-4 font-mono flex items-center gap-2 md:gap-3">
+                                <Code className="w-4 h-4 md:w-5 md:h-5" /> Core Philosophy
                             </h4>
-                            <p className="text-gray-300 leading-relaxed text-base md:text-lg border-l-4 border-purple-500/50 pl-5">{experience.process}</p>
+                            <p className="text-gray-300 leading-relaxed text-[13px] sm:text-base md:text-lg border-l-4 border-purple-500/50 pl-4 md:pl-5 text-justify md:text-left w-full">{experience.process}</p>
                         </div>
                     </div>
                 </motion.div>
@@ -208,7 +208,7 @@ const ExperienceDetails = () => {
                                     <h4 className={`text-lg md:text-2xl font-bold mb-2 md:mb-4 relative z-10 ${task.isHighlight ? 'text-purple-300' : 'text-white'}`}>
                                         {task.name}
                                     </h4>
-                                    <p className="text-gray-300 mb-4 md:mb-6 leading-relaxed text-[13px] sm:text-sm md:text-base relative z-10">
+                                    <p className="text-gray-300 mb-4 md:mb-6 leading-relaxed text-[13px] sm:text-sm md:text-base relative z-10 text-justify md:text-left w-full">
                                         {task.overview}
                                     </p>
 
@@ -222,7 +222,7 @@ const ExperienceDetails = () => {
                                         {task.outcome && (
                                             <div>
                                                 <h5 className="text-[11px] md:text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1 md:mb-2">Outcome</h5>
-                                                <p className="text-gray-400 font-medium text-sm md:text-base">{task.outcome}</p>
+                                                <p className="text-gray-400 font-medium text-sm md:text-base text-justify md:text-left w-full">{task.outcome}</p>
                                             </div>
                                         )}
                                     </div>

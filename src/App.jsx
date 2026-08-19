@@ -60,18 +60,41 @@ const Home = () => {
 window.__isFirstAppLoad = true;
 
 function App() {
+  const location = useLocation();
+
   // Flag clears immediately after the initial app mount
   useEffect(() => {
     window.__isFirstAppLoad = false;
   }, []);
 
-  // We only want the custom cursor on devices that support a fine pointer
-  const isDesktop = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
+  // Dynamic SEO Page Titles
+  useEffect(() => {
+    const path = location.pathname;
+
+    const pageTitle = "Bhagavan Pavan";
+    let metaDesc = "Bhagavan Pavan is a Full Stack Developer specializing in React.js, Node.js, MongoDB, JavaScript, Python and modern web development.";
+
+    if (path.startsWith('/project')) {
+      metaDesc = "View the innovative full-stack projects built by Bhagavan Pavan using React, Node.js, and modern web technologies.";
+    } else if (path.startsWith('/experience')) {
+      metaDesc = "Explore the professional experience and technical workflow of Bhagavan Pavan, a MERN stack developer.";
+    }
+
+    document.title = pageTitle;
+
+    // Apply the dynamic meta description
+    let metaDescriptionTag = document.querySelector('meta[name="description"]');
+    if (metaDescriptionTag) {
+      metaDescriptionTag.setAttribute("content", metaDesc);
+    }
+  }, [location]);
+
+  // Removed JS based pointer device detection to fix custom cursor rendering failures
 
   return (
     <div className="bg-transparent min-h-screen text-gray-100 font-sans selection:bg-purple-500/30 relative flex flex-col">
       <BackgroundEffects />
-      {isDesktop && <CustomCursor />}
+      <CustomCursor />
       <Navbar />
       <div className="flex-grow">
         <Routes>

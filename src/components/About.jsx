@@ -5,63 +5,49 @@ import { Monitor, Server, Code2, Wrench, Camera } from 'lucide-react';
 const skillCategories = {
     frontend: {
         id: 'frontend',
-        title: 'Frontend',
+        title: 'Frontend Development',
         icon: <Monitor className="w-5 h-5" />,
         skills: [
-            { name: 'HTML & CSS', level: 90 },
-            { name: 'JavaScript', level: 90 },
-            { name: 'React.js', level: 85 },
+            { name: 'HTML5 & CSS3', level: 90 },
+            { name: 'JavaScript / ES6+', level: 90 },
+            { name: 'React.js & Vite', level: 85 },
             { name: 'Tailwind CSS', level: 90 },
-            { name: 'Bootstrap', level: 80 },
-            { name: 'Material UI', level: 70 }
+            { name: 'Bootstrap', level: 80 }
         ]
     },
     backend: {
         id: 'backend',
-        title: 'Backend',
+        title: 'Backend Development',
         icon: <Server className="w-5 h-5" />,
         skills: [
-            { name: 'Node.js', level: 80 },
-            { name: 'Express.js', level: 75 },
-            { name: 'MongoDB', level: 80 },
-            { name: 'MySQL', level: 70 },
-            { name: 'PostgreSQL', level: 70 }
+            { name: 'Node.js & Express.js', level: 80 },
+            { name: 'MongoDB & Mongoose', level: 80 },
+            { name: 'REST APIs & JWT', level: 85 },
+            { name: 'Socket.io', level: 75 },
+            { name: 'Cloud Technologies (AWS)', level: 70 }
         ]
     },
     languages: {
         id: 'languages',
-        title: 'Programming Languages',
+        title: 'Programming Core',
         icon: <Code2 className="w-5 h-5" />,
         skills: [
             { name: 'Python', level: 90 },
-            { name: 'Java', level: 75 },
-            { name: 'JavaScript / ES6+', level: 90 },
-            { name: 'C / C++', level: 70 },
-            { name: 'SQL', level: 75 }
+            { name: 'Java', level: 80 },
+            { name: 'Data Structures and Algorithms', level: 85 },
+            { name: 'C / C++', level: 75 },
+            { name: 'SQL', level: 80 }
         ]
     },
     tools: {
         id: 'tools',
-        title: 'Tools',
+        title: 'Tools & Workflows',
         icon: <Wrench className="w-5 h-5" />,
         skills: [
-            { name: 'Git / GitHub', level: 90 },
-            { name: 'VS Code', level: 95 },
-            { name: 'Postman', level: 85 },
-            { name: 'Figma / UI/UX Design', level: 80 },
-            { name: 'Chrome Developer Tools', level: 85 }
-        ]
-    },
-    photography: {
-        id: 'photography',
-        title: 'Photography & Editing',
-        icon: <Camera className="w-5 h-5" />,
-        skills: [
-            { name: 'Photography', level: 90 },
-            { name: 'Videography', level: 95 },
-            { name: 'Photo Editing', level: 90 },
-            { name: 'Video Editing', level: 95 },
-            { name: 'Graphic Design', level: 80 }
+            { name: 'Git & GitHub', level: 90 },
+            { name: 'VS Code & Chrome DevTools', level: 90 },
+            { name: 'Visual Arts & UI/UX', level: 85 },
+            { name: 'Postman', level: 85 }
         ]
     }
 };
@@ -117,14 +103,21 @@ const About = () => {
         <section id="about" className="py-16 bg-transparent border-t border-gray-900 relative">
             <div className="container mx-auto px-6 md:px-12 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16 md:mb-20"
                 >
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">About <span className="text-purple-400">Me</span></h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
+                    <div className="inline-flex items-center justify-center p-3 md:p-4 bg-gray-900 rounded-2xl border border-gray-800 shadow-xl mb-6 group">
+                        <Monitor className="w-8 h-8 md:w-10 md:h-10 text-purple-400 group-hover:text-indigo-400 transition-colors" />
+                    </div>
+
+                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase">
+                        ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400">ME</span>
+                    </h2>
+
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mt-2"></div>
                 </motion.div>
 
                 {/* Professional About Me Section */}
@@ -140,18 +133,18 @@ const About = () => {
                         <h3 className="text-2xl md:text-4xl font-bold text-white leading-tight">
                             Bridging the gap between <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">engineering</span> and <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">creativity.</span>
                         </h3>
-                        <p className="text-gray-400 text-base md:text-lg leading-relaxed text-left">
-                            Hello! I'm <strong className="text-white">Bhagavan Pavan</strong>, a Full Stack Developer passionate about designing modern, scalable web applications. I specialize in <strong className="text-white text-indigo-300">React, Node.js, Python, and Java</strong> to build robust end-to-end solutions.
+                        <p className="text-gray-400 text-base md:text-lg leading-relaxed text-justify md:text-left w-full">
+                            Hello! I'm <strong className="text-white bg-transparent">Bhagavan Pavan</strong>, a Full Stack Developer specializing in <strong className="text-white text-indigo-300">React.js, Node.js, MongoDB, JavaScript and Python</strong>. I am passionate about building modern, scalable web applications.
                         </p>
-                        <p className="text-gray-400 text-base md:text-lg leading-relaxed text-left">
-                            Constantly exploring <strong className="text-white text-purple-300">AI and Software Engineering</strong>, I prioritize writing clean, efficient code to deliver digital products that balance high performance with exceptional user experiences.
+                        <p className="text-gray-400 text-base md:text-lg leading-relaxed text-justify md:text-left w-full">
+                            I am highly interested in <strong className="text-white text-purple-300">modern web development, software engineering, UI/UX, and problem solving</strong> to deliver digital products that balance high performance with exceptional user experiences.
                         </p>
 
-                        <div className="pt-6 flex flex-wrap gap-4">
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com&su=Let's%20Collaborate!&body=Hi%20Bhagavan,%0A%0AI%20am%20interested%20in%20collaborating%20with%20you%20on%20a%20new%20project.%20Here%20are%20the%20details..." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all">
+                        <div className="pt-6 flex flex-row flex-nowrap w-full gap-3">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com&su=Let's%20Collaborate!&body=Hi%20Bhagavan,%0A%0AI%20am%20interested%20in%20collaborating%20with%20you%20on%20a%20new%20project.%20Here%20are%20the%20details..." target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center text-center gap-2 px-2 md:px-8 py-3 md:py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[13px] md:text-base font-bold hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all whitespace-nowrap leading-tight">
                                 Let's Collaborate
                             </a>
-                            <a href="#projects" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gray-800 text-white font-bold hover:bg-gray-700 transition-all border border-gray-700">
+                            <a href="#projects" className="flex-1 flex items-center justify-center text-center gap-2 px-2 md:px-8 py-3 md:py-3.5 rounded-full bg-gray-800 text-white text-[13px] md:text-base font-bold hover:bg-gray-700 transition-all border border-gray-700 whitespace-nowrap leading-tight">
                                 View My IT Work
                             </a>
                         </div>
