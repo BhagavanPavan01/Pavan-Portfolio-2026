@@ -80,7 +80,7 @@ const Hero = () => {
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-row flex-nowrap w-full items-center justify-center md:justify-start gap-2 sm:gap-4 px-1 sm:px-0">
-                            <a href="https://drive.google.com/file/d/1sLY22kDVqN822kT7x2OzMfP3eL22q6vu/view?usp=sharing" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-2 sm:px-4 md:px-8 py-3 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 text-[13px] sm:text-sm md:text-base font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center justify-center gap-1.5 md:gap-2 group whitespace-nowrap overflow-hidden text-ellipsis">
+                            <a href="https://drive.google.com/file/d/1IcQxCVp0TQ8VZIsK9ab-Rp4Hwx222Yxc/view?usp=sharing" target="_blank" rel="noreferrer" className="flex-1 md:flex-none px-2 sm:px-4 md:px-8 py-3 md:py-4 rounded-full bg-transparent border-2 border-purple-500 text-purple-400 text-[13px] sm:text-sm md:text-base font-bold hover:bg-purple-500/10 hover:text-white transition-colors flex items-center justify-center gap-1.5 md:gap-2 group whitespace-nowrap overflow-hidden text-ellipsis">
                                 Download CV
                                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                             </a>
