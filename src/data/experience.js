@@ -1,9 +1,10 @@
 export const experienceData = [
+
     {
         id: "pharmacy-teaching",
         company: "JNTU-GV College of Pharmaceutical Sciences",
         role: "Instructor - Computer Applications in Pharmacy",
-        duration: "PRESENT",
+        duration: "APR 2026 – AUG 2026",
         desc: "Teaching pharmacy students the fundamentals of Computer Applications in Pharmacy, covering practical usage of HTML, CSS, Databases, MySQL, MS Word, and MS Excel.",
         image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         links: {
@@ -93,5 +94,29 @@ export const experienceData = [
                 ]
             }
         ]
+    },
+    {
+        id: "ai-python-intern",
+        company: "Coincent | Remote",
+        role: "Artificial Intelligence with Python Intern",
+        duration: "SEP 2022 – NOV 2022",
+        desc: "Completed an internship program focused on Artificial Intelligence and Python, gaining practical understanding of AI concepts and algorithmic problem-solving.",
+        image: "https://www.global-csg.com/wp-content/uploads/2024/08/How-Artificial-Intelligence-AI-and-Machine-Learning-ML-Would-Impact-the-Future-of-Engineering_.jpg",
+        links: {
+            certificate: "https://res.cloudinary.com/qxw39tud/image/upload/v1788010555/Bhagavan_Sep_2022_internship_25666_page-0001_thz0t2.jpg"
+        },
+        tags: ["Python", "Artificial Intelligence", "Search Algorithms", "A* Search", "Decision Trees", "Game Playing", "Expert Systems", "Knowledge Representation", "Fuzzy Logic"],
+        descriptionPoints: [
+            "Learned Python programming fundamentals for implementing AI-based solutions.",
+            "Studied AI problem-solving and search algorithms, including A* Search.",
+            "Explored game-playing algorithms and intelligent decision-making techniques.",
+            "Gained knowledge of Decision Trees and their application in AI.",
+            "Studied expert systems and knowledge representation.",
+            "Learned fundamental concepts of logic and fuzzy logic.",
+            "Developed a foundation in Artificial Intelligence algorithms and computational problem-solving."
+        ],
+        workflow: "Engaged in hands-on learning modules focusing on Python and AI fundamentals, followed by practical implementations of various AI algorithms like A* Search and Decision Trees.",
+        process: "The focus was on understanding the theoretical foundations of Artificial Intelligence and applying them programmatically using Python to solve complex computational problems."
     }
 ];
+

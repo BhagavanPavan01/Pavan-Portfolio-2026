@@ -4,7 +4,7 @@ import { Mail, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
 
 const Hero = () => {
-    const roles = ["Full Stack Developer", "MERN Stack Developer", "Software Developer"];
+    const roles = ["Full Stack Developer", "MERN Stack Developer", "Software Developer", "Python & AI Developer"];
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
     const [currentText, setCurrentText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
@@ -71,12 +71,12 @@ const Hero = () => {
                         </motion.h1>
 
                         <motion.h2 variants={itemVariants} className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-400 mb-6 h-10">
-                            <span className="sr-only">Full Stack Developer | MERN Stack Developer | Software Developer</span>
+                            <span className="sr-only">Full Stack Developer | MERN Stack Developer | Software Developer | Python & AI Developer</span>
                             <span aria-hidden="true">I am a <span className="text-purple-400 border-r-2 border-purple-400 pr-1 animate-pulse">{currentText}</span></span>
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-sm md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0 text-center md:text-left">
-                            Passionate about crafting interactive and dynamic web experiences. Specializing in full-stack development, bringing creative ideas to life on the internet.
+                            Passionate about crafting interactive web experiences and exploring Artificial Intelligence. Specializing in full-stack development and Python to bring creative, intelligent ideas to life on the internet.
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-row flex-nowrap w-full items-center justify-center md:justify-start gap-2 sm:gap-4 px-1 sm:px-0">
