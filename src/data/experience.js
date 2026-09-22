@@ -28,7 +28,7 @@ export const experienceData = [
         role: "Web Development Intern",
         duration: "OCT 2024 – NOV 2024",
         desc: "Developed responsive user interfaces using HTML, CSS, and JavaScript, gaining hands-on experience in building interactive web applications and executing layout structures.",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://res.cloudinary.com/qxw39tud/image/upload/v1789994842/Screenshot_2026-09-07_222334_iuv2hb.png",
         links: {
             live: "https://github.com/BhagavanPavan01/Saiket-systems-full-stack-internship",
             github: "https://github.com/BhagavanPavan01/Saiket-systems-full-stack-internship",

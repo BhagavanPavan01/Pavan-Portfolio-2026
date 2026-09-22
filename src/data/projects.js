@@ -58,55 +58,57 @@ export const projectsData = [
         ]
     },
     {
-        "id": "smart-ticketing-system",
-        "title": "Smart Ticketing System",
-        "desc": "A fully responsive QR-based smart ticketing project utilizing modern full stack technologies for seamless verification and access control.",
+        "id": "arjun-digitals",
+        "title": "Arjun Digitals",
+        "desc": "A premium, fully dynamic portfolio and Content Management System business platform built for a professional photography and videography studio with custom Admin capabilities.",
         "link": "#",
-        "github": "https://github.com/BhagavanPavan01",
-        "image": "https://res.cloudinary.com/qxw39tud/image/upload/v1785598604/Gemini_Generated_Image_wcb1alwcb1alwcb1_lff0we.png",
+        "github": "https://github.com/BhagavanPavan01/Arjun-Digitals",
+        "image": "https://res.cloudinary.com/qxw39tud/image/upload/v1790083369/Screenshot_2026-09-22_185209_mmyr36.png",
         "tags": [
             "React",
             "Node.js",
             "MongoDB",
-            "QR Codes"
+            "JWT Admin",
+            "Tailwind CSS"
         ],
         "sections": [
             {
                 "heading": "Features",
                 "icon": "Zap",
                 "items": [
-                    "Developed a QR-based smart ticketing system for seamless digital access.",
-                    "Implemented secure ticket generation and verification workflows.",
-                    "Designed full stack infrastructure integrating MongoDB and Node.js APIs.",
-                    "Built responsive frontend interfaces for users and event administrators."
+                    "Developed a completely dynamic photography/videography portfolio paired with a secure Admin CMS Dashboard.",
+                    "Engineered fully custom CRUD API architectures for gallery images, YouTube videos, team members, and client reviews.",
+                    "Built comprehensive service booking enquiry pipelines featuring live status updates, 'Book Your Slot' forms, and automated email processing.",
+                    "Implemented an interactive custom invoice generator utilizing real-time database inputs rendering customized PDFs directly within the browser."
                 ]
             },
             {
                 "heading": "Feature Implementation",
                 "icon": "Code",
                 "items": [
-                    "Users purchase or request tickets which auto-generate unique cryptographic QR codes.",
-                    "Administrators scan digital tickets triggering backend validation APIs.",
-                    "Real-time database updates prevent duplicate ticket entries or fraud.",
-                    "Metrics and scanned lists populate the event management dashboard natively."
+                    "Designed full-stack MERN architecture securing admin routes utilizing hardened JSON Web Tokens (JWT) possessing strict 12-hour expirations.",
+                    "Integrated automated cloud extraction parameters automatically pulling highest-quality native video thumbnails matching raw YouTube URLs directly.",
+                    "Programmed mobile-first interactive UI systems using Framer Motion animations and fluid responsive Tailwind grid architectures seamlessly.",
+                    "Established instant dynamic text modifications allowing administrators to globally update primary site copy, hero banners, and contact information natively."
                 ]
             },
             {
                 "heading": "Technical Philosophy",
                 "icon": "Briefcase",
                 "items": [
-                    "Engineered specific scalable validation endpoints ensuring instantaneous verification.",
-                    "Secured data payloads preventing malicious ticket cloning effectively.",
-                    "Focused heavily on mobile-first QR rendering ensuring rapid physical camera tracking."
+                    "Prioritized absolute client-side fluidity creating a remarkably lightweight cinematic presentation overlaying heavily robust database manipulation algorithms.",
+                    "Bypassed traditional third-party CMS architectures (e.g., WordPress) developing a bespoke administrative ecosystem retaining complete total structural ownership.",
+                    "Engineered explicit layout methodologies enforcing strict aspect ratio algorithms safeguarding visual continuity regardless of administrative upload dimensions successfully.",
+                    "Finalized server systems optimizing MongoDB queries handling heavy multimedia arrays effectively avoiding UI render blocking flawlessly."
                 ]
             },
             {
                 "heading": "User Guide",
                 "icon": "Target",
                 "items": [
-                    "Customers present digital QR interfaces on mobile devices directly at venues.",
-                    "Scanners utilize admin dashboard access to process entry instantaneously.",
-                    "System actively syncs with backend tracking exact capacity and attendance metrics."
+                    "Clients seamlessly navigate dynamic service galleries and submit direct booking inquiries initiating direct automated organizational email sequences natively.",
+                    "Administrators access the secure '/admin' gateway bypassing cryptographic token validators controlling total live site structure independently.",
+                    "Users experience absolute premium visual parity matching physical creative photography studios experiencing cinematic scroll animations concurrently."
                 ]
             }
         ]
