@@ -48,7 +48,7 @@ const Footer = () => {
                             <span className="w-2 h-2 bg-purple-500 rounded-full"></span> Sitemap
                         </h4>
                         <div className="flex flex-col gap-4 items-start">
-                            {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((link) => (
+                            {['Home', 'About', 'Education', 'Experience', 'Projects', 'Certifications', 'Contact'].map((link) => (
                                 <a key={link} href={`/#${link.toLowerCase()}`} className="text-gray-400 text-sm font-medium hover:text-white hover:translate-x-2 transition-all w-max flex items-center gap-1 group/link">
                                     <ArrowUpRight className="w-3 h-3 text-transparent group-hover/link:text-purple-400 transition-colors" />
                                     {link}

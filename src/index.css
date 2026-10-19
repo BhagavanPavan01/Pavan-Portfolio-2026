@@ -67,8 +67,47 @@
 
 /* Background overrides */
 :root.light-mode [class*="bg-gray-950"],
-:root.light-mode .experience-section {
+:root.light-mode .experience-section,
+:root.light-mode .education-section {
   background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+:root.light-mode .education-card {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+}
+
+:root.light-mode .education-card:hover {
+  border-color: rgba(147, 51, 234, 0.5) !important;
+  box-shadow: 0 20px 35px -10px rgba(147, 51, 234, 0.15) !important;
+}
+
+:root.light-mode .education-node {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+}
+
+:root.light-mode .education-badge-active {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
+}
+
+:root.light-mode .education-tab-active {
+  background: linear-gradient(135deg, rgba(243, 232, 255, 0.95), rgba(238, 242, 255, 0.95)) !important;
+  border-color: #9333ea !important;
+  box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.15), 0 0 0 2px rgba(147, 51, 234, 0.2) !important;
+}
+
+:root.light-mode .education-tab-inactive {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+:root.light-mode .education-tab-inactive:hover {
+  border-color: #c084fc !important;
+  background-color: #faf5ff !important;
 }
 
 :root.light-mode [class*="bg-gray-900"] {
