@@ -82,6 +82,7 @@ export const educationData = [
             "Office Automation & Software Tools"
         ],
         skills: [
+            "Python",
             "Java",
             "C Programming",
             "SQL / RDBMS",
@@ -94,7 +95,7 @@ export const educationData = [
         stats: [
             { label: "Degree Level", value: "Undergraduate" },
             { label: "Duration", value: "2020 - 2023" },
-            { label: "Graduation", value: "Passed with Distinction" },
+            { label: "Institution Type", value: "Govt. Degree College" },
             { label: "Status", value: "Completed (2023)" }
         ],
         badgeColor: "indigo"
