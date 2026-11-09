@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
+import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
     const roles = ["Full Stack Developer", "MERN Stack Developer", "Software Developer", "Python & AI Developer"];
@@ -97,6 +98,9 @@ const Hero = () => {
                                 </a>
                                 <a href="https://www.linkedin.com/in/bhagavan-pavan-227857253" aria-label="Bhagavan Pavan on LinkedIn" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-indigo-600 transition-all hover:-translate-y-1">
                                     <FaLinkedin className="w-5 h-5" />
+                                </a>
+                                <a href="https://leetcode.com/u/CAgcxoP3Ym/" aria-label="Bhagavan Pavan on LeetCode" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
+                                    <SiLeetcode className="w-5 h-5" />
                                 </a>
                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com" aria-label="Email Bhagavan Pavan" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-gray-900 text-gray-400 hover:text-white hover:bg-purple-600 transition-all hover:-translate-y-1">
                                     <Mail className="w-5 h-5" />

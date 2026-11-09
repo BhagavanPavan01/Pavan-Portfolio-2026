@@ -1,7 +1,7 @@
 import React from 'react';
 import { Terminal, MapPin, Mail, ArrowUpRight } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
-
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { SiLeetcode } from "react-icons/si";
 const Footer = () => {
     return (
         <footer className="relative bg-gray-950/80 backdrop-blur-xl pt-24 pb-12 border-t border-gray-900/80 overflow-hidden">
@@ -121,8 +121,10 @@ const Footer = () => {
 
                     <div className="flex items-center gap-3">
                         {[
-                            { name: 'GitHub', icon: FaGithub, href: "https://github.com/BhagavanPavan01", color: "hover:text-white" },
-                            { name: 'LinkedIn', icon: FaLinkedin, href: "https://www.linkedin.com/in/bhagavan-pavan-227857253", color: "hover:text-blue-400" }
+                            { name: 'GitHub', icon: FaGithub, href: "https://github.com/BhagavanPavan01", color: "hover:text-blue-400" },
+                            { name: 'LinkedIn', icon: FaLinkedin, href: "https://www.linkedin.com/in/bhagavan-pavan-227857253", color: "hover:text-blue-400" },
+                            { name: 'Mail', icon: FaEnvelope, href: "https://mail.google.com/mail/?view=cm&fs=1&to=bhagavanpavan999@gmail.com", color: "hover:text-blue-400" },
+                            { name: 'LeetCode', icon: SiLeetcode, href: "https://leetcode.com/u/CAgcxoP3Ym/", color: "hover:text-blue-400" }
                         ].map((social, id) => {
                             const Icon = social.icon;
                             return (
